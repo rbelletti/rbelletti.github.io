@@ -127,8 +127,21 @@ Figure 7 summarizes the variation of key quantities with Reynolds number.
 
 ![Figure 7 - Variation of key quantities](images/reynolds.png)
 
-***Figure 7** - Variation of the lift coefficient amplitude \\( |C_l| \\), mean drag coefficient \\( \overline{C_d} \\) and transverse displacement amplitude \\( |y| \\) with Reynolds number.*
+***Figure 7** - Variation of the lift coefficient amplitude \\( \lvert C_l \lvert \\), mean drag coefficient \\( \overline{C_d} \\) and transverse displacement amplitude \\( \lvert y \lvert \\) with Reynolds number.*
 
 # 5 Conclusion
 ## 5.1 Limitations of the present model
-* The two
+
+The main limitations of the present approach are related to physical modeling assumptions:
+
+- The two-dimensional formulation neglects inherently three-dimensional effects, such as spanwise flow structures, which are known to influence vortex shedding and VIV response.
+- The structural model is limited to a single transverse degree of freedom, ignoring modal coupling, nonlinear effects, and additional directions of motion.
+- Finally, the use of the SST k−ω  model may not fully capture highly unsteady separated flows at high Reynolds numbers, introducing uncertainty in the prediction of vortex dynamics.
+
+## Future improvements
+
+Future work should focus on extending the present framework toward more realistic and predictive configurations:
+
+- A natural progression is the adoption of a fully coupled fluid–structure interaction (**FSI**) model, enabling the analysis of more complex dynamic behaviors and potential nonlinear effects.
+- Further developments may include parametric studies over a wider range of Reynolds numbers and structural properties to better characterize the VIV response.
+- Finally, validation against experimental data is required to assess the reliability of the numerical predictions and support model calibration.
