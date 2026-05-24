@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     </head>
@@ -19,7 +20,12 @@
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
         <p class="view">
-          <a href="https://linkedin.com/in/riccardobelletti01" target="_blank">LinkedIn</a><br>
+          <a href="https://linkedin.com/in/riccardobelletti01" target="_blank" style="text-decoration: none;">
+            <i class="fab fa-linkedin" style="color: #0077b5; font-size: 1.2em; margin-right: 5px;"></i> LinkedIn
+          </a><br>
+          <a href="https://github.com/rbelletti" target="_blank" style="text-decoration: none;">
+            <i class="fab fa-github" style="color: #333; font-size: 1.2em; margin-right: 5px;"></i> GitHub
+          </a>
         </p>
         </header>
       
@@ -27,9 +33,6 @@
       {{ content }}
       </section>
 
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
   </body>
