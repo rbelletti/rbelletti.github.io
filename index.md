@@ -32,7 +32,7 @@ Hi! I’m Riccardo, a Master’s student in Mechanical Engineering. This is my p
   </div>
 
   <div style="flex: 1;">
-    <img src="images/viv_project.png" alt="Descrizione" style="height: 100%; border-radius: 4px;">
+    <img src="images/viv_project.png" alt="Descrizione" style="width: 75%; border-radius: 4px;">
   </div>
 
 </div>
