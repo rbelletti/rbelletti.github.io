@@ -2,6 +2,29 @@
 layout: default
 ---
 
+<style>
+/* Applichiamo la modifica solo su schermi desktop */
+@media screen and (min-width: 960px) {
+  
+  /* 1. Nasconde completamente la colonna sinistra (l'header con nome e pulsanti) */
+  header {
+    display: none !important;
+  }
+  
+  /* 2. Allarga l'area del testo a 860px e la centra nella pagina */
+  section {
+    width: 860px !important;
+    float: none !important;
+    margin: 0 auto !important;
+  }
+  
+  /* 3. Forza il contenitore principale a mantenere la misura originaria di 860px */
+  .wrapper {
+    width: 860px !important;
+  }
+}
+</style>
+
 {{ content }}
 
 <script type="text/javascript" async
