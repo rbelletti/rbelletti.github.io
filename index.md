@@ -15,7 +15,7 @@ Hi! I’m Riccardo, a Master’s student in Mechanical Engineering. This is my p
   *Brief description: Aircraft wing optimization through FEM and modal analysis.*
 
 | **[Vortex-Induced Vibration \\( \lvert \\) Ansys Fluent \\( \lvert \\) 2026](vortex-induced-vibrations/)** |
-| This project studies vortex-induced vibrations of a 2D cylinder using CFD with a SDOF structural model, capturing vortex shedding and the resulting oscillations via a transient dynamic mesh while analyzing the wake-structure interaction in time and frequency domains. | ![Descrizione](images/viv_project.png) |
+| This project studies vortex-induced vibrations of a 2D cylinder using CFD with a SDOF structural model, capturing vortex shedding and the resulting oscillations via a transient dynamic mesh while analyzing the wake-structure interaction in time and frequency domains. | <img src="images/viv_project.png" alt="Descrizione" style="width: 100%; border-radius: 4px;"> |
 
 
 <h3><a href="vortex-induced-vibrations/" style="text-decoration: none; color: inherit;">Vortex-Induced Vibration | Ansys Fluent | 2026</a></h3>
