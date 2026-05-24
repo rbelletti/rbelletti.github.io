@@ -29,7 +29,7 @@ $$\ddot{y}+2\zeta\omega_n\dot{y}+\omega_n^2y=F_y/m_{eff}$$
 where \\( y \\) is the transverse displacement, \\( \omega_n \\) is the natural frequency of the system, \\( \zeta \\) is the damping ratio, \\( F_y \\) is the fluid force in the transverse direction and \\( m_{eff} \\) is the effective mass.
 
 <figure style="text-align: center; margin: 20px 0;">
-  <img src="images/viv_model.png" alt="Simulazione" style="max-width: 100%; border-radius: 4px;">
+  <img src="images/viv_model.png" alt="Single degree of freedom model" style="max-width: 100%; border-radius: 4px;">
   <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
     <em> <b>Figure 1</b> - Single degree of freedom model: the model intentionally neglects in-line motion to isolate cross-flow dynamics.</em>
   </figcaption>
@@ -58,20 +58,29 @@ The problem is modeled as a two-dimensional flow around a circular cylinder with
 
 The computational domain is designed to minimize boundary effects while keeping the computational cost reasonable. The inlet and lateral boundaries are placed sufficiently far from the cylinder to ensure that the flow development and vortex shedding are not artificially constrained by the domain size.
 
-![Figure 2 - Geometry of the fluid domain](images/fluid_domain.png)
-
-***Figure 2** - Geometry of the fluid domain.*
+<figure style="text-align: center; margin: 20px 0;">
+  <img src="images/fluid_domain.png" alt="Geometry of the fluid domain." style="max-width: 100%; border-radius: 4px;">
+  <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
+    <em><b>Figure 2</b> - Geometry of the fluid domain.</em>
+  </figcaption>
+</figure>
 
 ## 3.3 Mesh Strategy
 A non-uniform mesh is used to resolve the boundary layer around the cylinder and the wake region where vortex shedding develops. An inflation layer is applied near the cylinder wall to properly capture near-wall gradients and the boundary layer (see Figure 3). A local refinement zone (body of influence) is introduced around the cylinder (see Figure 4) to resolve velocity gradients and flow separation while limiting numerical diffusion in the wake.
 
-![Figure 3 - Boundary layer mesh](images/mesh1.png)
+<figure style="text-align: center; margin: 20px 0;">
+  <img src="images/mesh1.png" alt="Boundary layer mesh" style="max-width: 100%; border-radius: 4px;">
+  <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
+    <em><b>Figure 3</b> - Boundary layer mesh (image used courtesy of ANSYS, Inc.).</em>
+  </figcaption>
+</figure>
 
-***Figure 3** - Boundary layer mesh (image used courtesy of ANSYS, Inc.).*
-
-![Figure 4 - Wake region mesh](images/mesh2.png)
-
-***Figure 4** - Wake region mesh (image used courtesy of ANSYS, Inc.).*
+<figure style="text-align: center; margin: 20px 0;">
+  <img src="images/mesh2.png" alt="Wake region mesh" style="max-width: 100%; border-radius: 4px;">
+  <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
+    <em><b>Figure 4</b> - Wake region mesh (image used courtesy of ANSYS, Inc.).</em>
+  </figcaption>
+</figure>
 
 ## 3.4 Boundary Layer Resolution
 Proper resolution of the boundary layer is required to accurately capture near-wall effects, particularly for drag prediction and flow separation at high Reynolds numbers. The boundary layer thickness is estimated using the empirical relation for turbulent flow over a flat plate:
@@ -105,16 +114,22 @@ A dynamic mesh approach is used to account for the transverse motion of the cyli
 
 The time evolution of the wall unit \\( y^+ \\) is shown in Figure 5. The value remains nearly constant and close to 1 throughout the simulation.
 
-![Figure 5 - Time evolution of the wall unit](images/yplus.png)
-
-***Figure 5** - Time evolution of the wall unit \\( y^+ \\) showing values close to 1.*
+<figure style="text-align: center; margin: 20px 0;">
+  <img src="images/yplus.png" alt="Time evolution of the wall unit y^+" style="max-width: 100%; border-radius: 4px;">
+  <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
+    <em><b>Figure 5</b> - Time evolution of the wall unit \\( y^+ \\) showing values close to 1.</em>
+  </figcaption>
+</figure>
 
 ## 4.2 Frequency-domain analysis
 The power spectral density (PSD) of the aerodynamic coefficients and transverse displacement is shown in Figure 6.
 
-![Figure 6 - Power spectral density](images/psd.png)
-
-***Figure 6** - PSD of aerodynamic coefficients and transverse displacement.*
+<figure style="text-align: center; margin: 20px 0;">
+  <img src="images/psd.png" alt="Time evolution of the wall unit y^+" style="max-width: 100%; border-radius: 4px;">
+  <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
+    <em><b>Figure 6</b> - PSD of aerodynamic coefficients and transverse displacement.</em>
+  </figcaption>
+</figure>
 
 To quantify the response, the mean values \\( \overline{X} \\) and oscillation amplitudes \\( \lvert X \lvert \\) are reported in the table below.
 
@@ -128,9 +143,12 @@ To quantify the response, the mean values \\( \overline{X} \\) and oscillation a
 
 Figure 7 summarizes the variation of key quantities with Reynolds number.
 
-![Figure 7 - Variation of key quantities](images/reynolds.png)
-
-***Figure 7** - Variation of the lift coefficient amplitude \\( \lvert C_l \lvert \\), mean drag coefficient \\( \overline{C_d} \\) and transverse displacement amplitude \\( \lvert y \lvert \\) with Reynolds number.*
+<figure style="text-align: center; margin: 20px 0;">
+  <img src="images/yplus.png" alt="Time evolution of the wall unit y^+" style="max-width: 100%; border-radius: 4px;">
+  <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
+    <em><b>Figure 7</b> - Variation of the lift coefficient amplitude \\( \lvert C_l \lvert \\), mean drag coefficient \\( \overline{C_d} \\) and transverse displacement amplitude \\( \lvert y \lvert \\) with Reynolds number.</em>
+  </figcaption>
+</figure>
 
 # 5 Conclusion
 ## 5.1 Limitations of the present model
