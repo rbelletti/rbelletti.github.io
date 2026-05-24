@@ -1,24 +1,27 @@
+---
+layout: page
+title: Vortex-Induced Vibration
+---
+
 [← Back to Showcase](index.html)
 
-# Vortex-Induced Vibration
-
-## 1. Introduction
+# 1. Introduction
 
 Vortex-Induced Vibrations (VIV) are a fluid–structure interaction phenomenon that occurs when a fluid flow passes around a bluff body, such as a cylinder, generating alternating vortices in its wake (Kármán vortex street).
 
-### 1.1 Why Does VIV Matter?
+## 1.1 Why Does VIV Matter?
 
 This periodic shedding of vortices produces oscillating forces perpendicular to the flow direction, which can induce vibrations in the structure. When the frequency of vortex shedding approaches the natural frequency of the structure, a resonance condition may occur, significantly amplifying the oscillation amplitude.
 
 Understanding VIV is crucial in many engineering applications, particularly in offshore, civil and mechanical engineering. 
 
-### 1.2 VIV for Energy Harvesting
+## 1.2 VIV for Energy Harvesting
 
 Although often considered a source of damage, VIV can also be exploited as a renewable energy source. Flow-induced oscillations can be converted into electrical power using devices such as piezoelectric or electromagnetic systems. This approach enables the development of self-powered sensors and small-scale energy solutions.
 
 VIV therefore represents not only a challenge, but also an opportunity in modern engineering.
 
-## 2 Physical Model
+# 2 Physical Model
 
 To investigate vortex-induced vibrations (VIV), the system is modeled as a simplified fluid–structure interaction problem, where a circular cylinder is elastically mounted and free to oscillate in the transverse direction (see Figure 1).
 
@@ -34,9 +37,9 @@ where $y$ is the transverse displacement, $\omega_n$ is the natural frequency of
 
 ***Figure 1** - Single degree of freedom model: the model intentionally neglects in-line motion to isolate cross-flow dynamics.*
 
-## 3 Setup
+# 3 Setup
 
-### 3.1 Input Data
+## 3.1 Input Data
 
 Different inlet velocity values are considered in order to investigate the system response over a range of flow conditions relevant to vortex-induced vibrations.
 
@@ -56,7 +59,7 @@ where $\rho$ is the fluid density, $U$ is the inlet velocity, $D$ is cylinder di
 | $28.9$ | $9.90 \cdot 10^6$ |
 | $35.2$ | $1.20 \cdot 10^7$ |
 
-### 3.2 Geometry and Computational Domain
+## 3.2 Geometry and Computational Domain
 
 The problem is modeled as a two-dimensional flow around a circular cylinder with diameter $D=5\;m$.
 
@@ -68,7 +71,7 @@ The geometry proportions of the computational domain are shown in Figure 2.
 
 ***Figure 2** - Geometry of the fluid domain.*
 
-### 3.3 Mesh Strategy
+## 3.3 Mesh Strategy
 
 A non-uniform mesh is used to resolve the boundary layer around the cylinder and the wake region where vortex shedding develops.
 
@@ -86,7 +89,7 @@ This strategy ensures a balance between accuracy in critical flow regions and ov
 
 ***Figure 4** - Wake region mesh (image used courtesy of ANSYS, Inc.).*
 
-### 3.4 Boundary Layer Resolution
+## 3.4 Boundary Layer Resolution
 
 Proper resolution of the boundary layer is required to accurately capture near-wall effects, particularly for drag prediction and flow separation at high Reynolds numbers.
 
@@ -116,7 +119,7 @@ $$
 
 This ensures consistency between near-wall resolution and the physical boundary layer thickness, enabling accurate wall shear stress prediction while maintaining mesh efficiency.
 
-### 3.5 Solver Setup
+## 3.5 Solver Setup
 
 The flow is modeled as incompressible, viscous air and solved using a transient approach to capture vortex shedding and fluid–structure interaction effects.
 
@@ -130,7 +133,7 @@ $$
 
 to ensure adequate temporal resolution of the unsteady dynamics.
 
-### **3.6 Dynamic Mesh**
+## **3.6 Dynamic Mesh**
 
 A dynamic mesh approach is used to account for the transverse motion of the cylinder.
 
@@ -143,9 +146,9 @@ Structural damping is neglected, assuming that fluid-induced damping dominates t
 
 The cylinder motion is governed by the balance between fluid forces, inertia, and elastic restoring force.
 
-## 4 Results
+# 4 Results
 
-### 4.1 Dimensionless wall distance
+## 4.1 Dimensionless wall distance
 
 The time evolution of the wall unit $y^+$ is shown in Figure 5. The value remains nearly constant and close to 1 throughout the simulation, indicating consistent near-wall resolution despite the unsteady motion.
 
@@ -155,7 +158,7 @@ This confirms that the boundary layer is fully resolved without the use of wall 
 
 ***Figure 5** - Time evolution of the wall unit $y^+$ showing values close to 1, indicating adequate near-wall resolution.*
 
-### 4.2 Frequency-domain analysis
+## 4.2 Frequency-domain analysis
 
 The power spectral density (PSD) of the aerodynamic coefficients and transverse displacement is shown in Figure 6. A clear dominant frequency is observed in all signals, corresponding to vortex shedding and confirming the coupling between fluid forcing and structural response.
 
@@ -184,9 +187,9 @@ Figure 7 summarizes the variation of key quantities with Reynolds number.
 
 ***Figure 7** - Variation of the lift coefficient amplitude $|C_l|$, mean drag coefficient $\overline{C_d}$ and transverse displacement amplitude $|y|$ with Reynolds number.*
 
-## 5 Conclusion
+# 5 Conclusion
 
-### **5.1 Limitations of the present model**
+## **5.1 Limitations of the present model**
 
 The main limitations of the present approach are related to physical modeling assumptions:
 
@@ -196,7 +199,7 @@ The main limitations of the present approach are related to physical modeling as
 
 ---
 
-### **5.2 Future improvements**
+## **5.2 Future improvements**
 
 Future work should focus on extending the present framework toward more realistic and predictive configurations:
 
