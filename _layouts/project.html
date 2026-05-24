@@ -28,15 +28,20 @@ section {
 
 {{ content }}
 
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <script>
-  // Questo script forza MathJax a ri-processare la pagina dopo che è stata caricata
-  window.addEventListener('load', function() {
-    if (typeof MathJax !== 'undefined') {
-      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-    }
-  });
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']],
+    processEscapes: true
+  },
+  options: {
+    // Questo comando forza MathJax a scansionare tutto il DOM
+    processHtmlClass: 'math',
+    ignoreHtmlClass: 'no-math'
+  }
+};
 </script>
