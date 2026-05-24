@@ -44,13 +44,13 @@ $$Re=\frac{\rho U D}{\mu}$$
 
 where \\( \rho \\) is the fluid density, \\( U \\) is the inlet velocity, \\( D \\) is cylinder diameter and \\( \mu \\) is the fluid viscosity.
 
-| \\( U \\) [m/s] | \\( Re \\) |
+| \\( U [m/s] \\) | \\( Re \\) |
 | :--- | :--- |
-| 10.1 | \\( 3.46 \cdot 10^6 \\) |
-| 16.4 | \\( 5.61 \cdot 10^6 \\) |
-| 22.6 | \\( 7.75 \cdot 10^6 \\) |
-| 28.9 | \\( 9.90 \cdot 10^6 \\) |
-| 35.2 | \\( 1.20 \cdot 10^7 \\) |
+| \\( 10.1 \\) | \\( 3.46 \cdot 10^6 \\) |
+| \\( 16.4 \\) | \\( 5.61 \cdot 10^6 \\) |
+| \\( 22.6 \\) | \\( 7.75 \cdot 10^6 \\) |
+| \\( 28.9 \\) | \\( 9.90 \cdot 10^6 \\) |
+| \\( 35.2 \\) | \\( 1.20 \cdot 10^7 \\) |
 
 ## 3.2 Geometry and Computational Domain
 
