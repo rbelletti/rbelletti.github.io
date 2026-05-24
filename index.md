@@ -20,7 +20,7 @@ Hi! I’m Riccardo, a Master’s student in Mechanical Engineering. This is my p
 <div style="display: flex; align-items: center; gap: 20px;">
 
   <div style="flex: 1;">
-    <h3>[Vortex-Induced Vibration \\( \lvert \\) Ansys Fluent \\( \lvert \\) 2026](vortex-induced-vibrations/)</h3>
+    <h3><a href="vortex-induced-vibrations/" style="text-decoration: none; color: inherit;">Vortex-Induced Vibration \\( \lvert \\) Ansys Fluent \\( \lvert \\) 2026</a></h3>
     <p>This project studies vortex-induced vibrations of a 2D cylinder using CFD with a SDOF structural model, capturing vortex shedding and the resulting oscillations via a transient dynamic mesh while analyzing the wake-structure interaction in time and frequency domains.</p>
   </div>
 
