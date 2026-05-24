@@ -8,14 +8,14 @@ Hi! I’m Riccardo, a Master’s student in Mechanical Engineering. This is my p
 
 ## Project Showcase
 
-* **[Vortex-Induced Vibration \\( \lvert \\) Ansys Fluent \\( \lvert \\) 2026](vortex-induced-vibrations/)**<br>
-  *Brief description: 2D cylinder CFD analysis capturing vortex shedding and wake-structure interaction.*
+**[Vortex-Induced Vibration \\( \lvert \\) Ansys Fluent \\( \lvert \\) 2026](vortex-induced-vibrations/)**<br>
+*Brief description: 2D cylinder CFD analysis capturing vortex shedding and wake-structure interaction.*
 
-* **[CFD-FEM One-Way Coupling \\( \lvert \\) Ansys Products \\( \lvert \\) 2025](cfd-fem-coupling/)**<br>
-  *Brief description: Aircraft wing optimization through FEM and modal analysis.*
+**[CFD-FEM One-Way Coupling \\( \lvert \\) Ansys Products \\( \lvert \\) 2025](cfd-fem-coupling/)**<br>
+*Brief description: Aircraft wing optimization through FEM and modal analysis.*
 
 <h3><a href="vortex-induced-vibrations/" style="text-decoration: none; color: inherit;">Vortex-Induced Vibration | Ansys Fluent | 2026</a></h3>
-<div style="display: flex; align-items: center; gap: 10px;">
+<div style="display: flex; align-items: flex-start; gap: 10px;">
   <div style="flex: 3;">
     <p>This project studies vortex-induced vibrations of a 2D cylinder using CFD with a SDOF structural model, capturing vortex shedding and the resulting oscillations via a transient dynamic mesh while analyzing the wake-structure interaction in time and frequency domains.</p>
   </div>
