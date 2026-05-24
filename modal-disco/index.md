@@ -17,11 +17,11 @@ Before testing, the sensitivities of both transducers were calibrated within the
 
 | Hammer Sensitivity | Accelerometer Sensitivity |
 | :--- | :--- |
-| \( 5.39 \cdot 10^{-3} \) V/g (\( g=9.81 \) m/s²) | \( 15.9 \cdot 10^{-3} \) V/N |
+| \\( 5.39 \cdot 10^{-3} \\) V/g (\\( g=9.81 \\) m/s²) | \\( 15.9 \cdot 10^{-3} \\) V/N |
 
 The acquisition parameters - including bandwidth, spectral resolution, triggering conditions, windowing functions, and H1 FRF estimation - were selected to ensure accurate measurements while minimizing noise contamination.
 
-![Figure 1 - Acquisition and FRF estimation settings](images/fig1.png)
+![Figure 1 - Acquisition and FRF estimation settings](images/all_Settings.png)
 
 ***Figure 1** - Acquisition and FRF estimation settings used in Siemens Testlab (image used courtesy of Siemens Simcenter Testlab).*
 
@@ -32,13 +32,13 @@ The measurement campaign was conducted using a moving accelerometer approach. Fo
 
 Measurement quality was evaluated through the coherence function, where values close to unity indicated reliable and repeatable measurements.
 
-![Figure 2 - Coherence function](images/fig2.png)
+![Figure 2 - Coherence function](images/coherence.png)
 
 ***Figure 2** - Coherence function associated with the driving point FRF (image used courtesy of Siemens Simcenter Testlab).*
 
 Local coherence reductions were observed near structural antiresonances, where the response amplitude becomes very small and measurement noise dominates the signal. The validity of the measurements was therefore assessed through combined analysis of FRF amplitude, phase, and PSD functions within Siemens Testlab.
 
-![Figure 3 - Measurement interface](images/fig3.png)
+![Figure 3 - Measurement interface](images/measurement_interface.png)
 
 ***Figure 3** - Measurement interface used during the impact testing campaign (image used courtesy of Siemens Simcenter Testlab).*
 
@@ -47,7 +47,7 @@ The measured FRFs were post-processed in Siemens Testlab using a Multiple Degree
 
 Modal identification was performed through stabilization diagram analysis by progressively increasing the model order and monitoring pole stability across successive solutions. Poles showing stable frequency and damping values were identified as physical structural modes, while unstable poles were discarded as numerical artifacts.
 
-![Figure 4 - Stabilization diagram](images/fig4.png)
+![Figure 4 - Stabilization diagram](images/stabilization.png)
 
 ***Figure 4** - Stabilization diagram used for modal parameter identification (image used courtesy of Siemens Simcenter Testlab).*
 
