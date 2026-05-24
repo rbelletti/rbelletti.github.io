@@ -26,7 +26,7 @@ The governing equation of motion is:
 
 $$\ddot{y}+2\zeta\omega_n\dot{y}+\omega_n^2y=F_y/m_{eff}$$
 
-where \\( y \\) is the transverse displacement, \( \omega_n \) is the natural frequency of the system, \( \zeta \) is the damping ratio, \( F_y \) is the fluid force in the transverse direction and \( m_{eff} \) is the effective mass.
+where \( y \) is the transverse displacement, \( \omega_n \) is the natural frequency of the system, \( \zeta \) is the damping ratio, \( F_y \) is the fluid force in the transverse direction and \( m_{eff} \) is the effective mass.
 
 ![Figure 1 - Single degree of freedom model](images/viv_model.png)
 
