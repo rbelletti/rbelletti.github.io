@@ -4,10 +4,10 @@ Hi! I’m Riccardo, a Master’s student in Mechanical Engineering. This is my p
 
 ## Project Showcase
 
-**[Vortex-Induced Vibration | Ansys Fluent | 2026](docs/vortex-induced-vibrations/)**<br>
+**[Vortex-Induced Vibration | Ansys Fluent | 2026](https://veiled-echo-e9c.notion.site/2D-Vortex-Induced-Vibrations-36aa9d6b51c780c3ab6adf81bb31740e?)**<br>
 *Brief description: 2D cylinder CFD analysis capturing vortex shedding and wake-structure interaction.*
 
-**[Modal Testing | Simcenter Testlab | 2023](docs/modal-disco/)**<br>
+**[Modal Testing | Simcenter Testlab | 2023](https://veiled-echo-e9c.notion.site/Modal-Testing-35ca9d6b51c780d9aae1e48d69707705?)**<br>
 *Brief description: Aircraft wing optimization through FEM and modal analysis.*
 
 ---
