@@ -3,7 +3,7 @@ layout: page
 title: Vortex-Induced Vibration
 ---
 
-[← Back to Showcase](index.html)
+[← Back to Showcase](../index.html)
 
 # 1. Introduction
 
@@ -31,7 +31,7 @@ $$\ddot{y}+2\zeta\omega_n\dot{y}+\omega_n^2y=F_y/m_{eff}$$
 
 where $y$ is the transverse displacement, $\omega_n$ is the natural frequency of the system, $\zeta$ is the damping ratio, $F_y$ is the fluid force in the transverse direction and $m_{eff}$ is the effective mass.
 
-![Figure 1 - Single degree of freedom model](viv_model.png)
+![Figure 1 - Single degree of freedom model](images/viv_model.png)
 
 ***Figure 1** - Single degree of freedom model: the model intentionally neglects in-line motion to isolate cross-flow dynamics.*
 
@@ -63,7 +63,7 @@ The computational domain is designed to minimize boundary effects while keeping 
 
 The geometry proportions of the computational domain are shown in Figure 2.
 
-![Figure 2 - Geometry of the fluid domain](fluid_domain.png)
+![Figure 2 - Geometry of the fluid domain](images/fluid_domain.png)
 
 ***Figure 2** - Geometry of the fluid domain.*
 
@@ -75,13 +75,11 @@ An inflation layer is applied near the cylinder wall to properly capture near-wa
 
 Away from the cylinder, the mesh is gradually coarsened to reduce computational cost while maintaining sufficient accuracy in the far field.
 
-This strategy ensures a balance between accuracy in critical flow regions and overall computational efficiency.
-
-![Figure 3 - Boundary layer mesh](mesh2.png)
+![Figure 3 - Boundary layer mesh](images/mesh1.png)
 
 ***Figure 3** - Boundary layer mesh (image used courtesy of ANSYS, Inc.).*
 
-![Figure 4 - Wake region mesh](mesh1.png)
+![Figure 4 - Wake region mesh](images/mesh2.png)
 
 ***Figure 4** - Wake region mesh (image used courtesy of ANSYS, Inc.).*
 
@@ -101,93 +99,42 @@ where the friction velocity is obtained from the skin friction coefficient:
 
 $$C_f=\frac{0.079}{\sqrt[4]{x}}, \quad u_{\tau}=U_{\infty}\sqrt{\frac{C_f}{2}}$$
 
-The inflation layer is then defined such that its total thickness matches the estimated boundary layer thickness $\delta$. Assuming a geometric growth rate $r$, the number of layers $N$ is computed from:
-
-$$\delta=h\sum_{i=1}^{N}r^i=h\frac{r^N-1}{r-1}$$
-
-This ensures consistency between near-wall resolution and the physical boundary layer thickness, enabling accurate wall shear stress prediction while maintaining mesh efficiency.
-
 ## 3.5 Solver Setup
 
 The flow is modeled as incompressible, viscous air and solved using a transient approach to capture vortex shedding and fluid–structure interaction effects.
 
-Simulations are performed at high Reynolds numbers using the **SST k-ω turbulence model**, which provides accurate near-wall resolution and reliable prediction of separated flows.
-
-The time step is chosen based on the oscillation period:
+Simulations are performed at high Reynolds numbers using the **SST k-ω turbulence model**. The time step is chosen based on the oscillation period:
 
 $$\Delta t < \frac{T}{20}$$
-
-to ensure adequate temporal resolution of the unsteady dynamics.
-
-## 3.6 Dynamic Mesh
-
-A dynamic mesh approach is used to account for the transverse motion of the cylinder.
-
-The system is modeled as a single degree-of-freedom oscillator with:
-
-- mass: $m=28.5 \; kg$
-- stiffness: $k=24.8 \; N/m$
-
-Structural damping is neglected, assuming that fluid-induced damping dominates the system response in vortex-induced vibration conditions.
-
-The cylinder motion is governed by the balance between fluid forces, inertia, and elastic restoring force.
 
 # 4 Results
 
 ## 4.1 Dimensionless wall distance
 
-The time evolution of the wall unit $y^+$ is shown in Figure 5. The value remains nearly constant and close to 1 throughout the simulation, indicating consistent near-wall resolution despite the unsteady motion.
+The time evolution of the wall unit $y^+$ is shown in Figure 5. The value remains nearly constant and close to 1 throughout the simulation.
 
-This confirms that the boundary layer is fully resolved without the use of wall functions.
+![Figure 5 - Time evolution of the wall unit](images/yplus.png)
 
-![Figure 5 - Time evolution of the wall unit](image39.png)
-
-***Figure 5** - Time evolution of the wall unit $y^+$ showing values close to 1, indicating adequate near-wall resolution.*
+***Figure 5** - Time evolution of the wall unit $y^+$ showing values close to 1.*
 
 ## 4.2 Frequency-domain analysis
 
-The power spectral density (PSD) of the aerodynamic coefficients and transverse displacement is shown in Figure 6. A clear dominant frequency is observed in all signals, corresponding to vortex shedding and confirming the coupling between fluid forcing and structural response.
+The power spectral density (PSD) of the aerodynamic coefficients and transverse displacement is shown in Figure 6.
 
-![Figure 6 - Power spectral density](psd.png)
+![Figure 6 - Power spectral density](images/psd.png)
 
 ***Figure 6** - Power spectral density of aerodynamic coefficients and transverse displacement.*
-
-To quantify the response, the mean values and oscillation amplitudes are reported in the table below.
 
 | $Re$ | $\overline{C_l} \pm \|C_l\|$ | $\overline{C_d} \pm \|C_d\|$ | $\overline{y} \pm \|y\|$ |
 | :--- | :--- | :--- | :--- |
 | $3.46 \cdot 10^6$ | $0.009 \pm 0.351$ | $0.560 \pm 0.032$ | $-1.710 \, m \pm 0.290 \, m$ |
 | $5.61 \cdot 10^6$ | $0.003 \pm 0.022$ | $0.373 \pm 0.000$ | $-1.713 \, m \pm 0.105 \, m$ |
 | $7.75 \cdot 10^6$ | $0.001 \pm 0.024$ | $0.335 \pm 0.000$ | $-1.738 \, m \pm 0.179 \, m$ |
-| $9.90 \cdot 10^6$ | $0.003 \pm 0.025$ | $0.349 \pm 0.000$ | $-1.472 \, m \pm 0.258 \, m$ |
-| $1.20 \cdot 10^7$ | $0.000 \pm 0.247$ | $0.382 \pm 0.036$ | $-1.824 \, m \pm 0.524 \, m$ |
-
-The drag coefficient exhibits a relatively stable mean value across Reynolds numbers, while the lift coefficient oscillates around zero with finite amplitude, reflecting the periodic vortex shedding.
-
-The transverse displacement shows significant oscillation amplitudes, indicating a strong structural response to the unsteady lift forcing.
-
-Figure 7 summarizes the variation of key quantities with Reynolds number.
-
-![Figure 7 - Variation of key quantities](tab.png)
-
-***Figure 7** - Variation of the lift coefficient amplitude $\|C_l\|$, mean drag coefficient $\overline{C_d}$ and transverse displacement amplitude $\|y\|$ with Reynolds number.*
 
 # 5 Conclusion
 
-## 5.1 Limitations of the present model
-
-The main limitations of the present approach are related to physical modeling assumptions:
-
-- The two-dimensional formulation neglects inherently three-dimensional effects, such as spanwise flow structures, which are known to influence vortex shedding and VIV response.
-- The structural model is limited to a single transverse degree of freedom, ignoring modal coupling, nonlinear effects, and additional directions of motion.
-- Finally, the use of the SST k−ω model may not fully capture highly unsteady separated flows at high Reynolds numbers, introducing uncertainty in the prediction of vortex dynamics.
+## 5.1 Limitations and Future work
+The approach focuses on a 2D SDOF oscillator; future improvements will target full 3D FSI modeling and experimental validation.
 
 ---
-
-## 5.2 Future improvements
-
-Future work should focus on extending the present framework toward more realistic and predictive configurations:
-
-- A natural progression is the adoption of a fully coupled fluid–structure interaction (**FSI**) model, enabling the analysis of more complex dynamic behaviors and potential nonlinear effects.
-- Further developments may include parametric studies over a wider range of Reynolds numbers and structural properties to better characterize the VIV response.
-- Finally, validation against experimental data is required to assess the reliability of the numerical predictions and support model calibration.
+*Disclaimer: The projects, models, and simulations presented in this portfolio are intended solely for academic and illustrative purposes. The numerical data and results are not certified and should not be used for real-world industrial or commercial engineering applications.*
