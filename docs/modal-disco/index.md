@@ -1,9 +1,6 @@
----
-layout: project
-title: Modal Testing
----
-
 [← Back to Showcase](../index.html)
+
+# Modal Testing
 
 # 1. Introduction
 This project focused on the experimental modal analysis of a floating brake disc through impact hammer testing and Frequency Response Function (FRF) measurements. The acquired data were processed in Siemens Testlab to identify the modal parameters governing the dynamic behavior of the structure, including natural frequencies, damping ratios, and mode shapes.
