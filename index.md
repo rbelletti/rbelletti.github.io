@@ -8,10 +8,10 @@ Hi! I’m Riccardo, a Master’s student in Mechanical Engineering. This is my p
 
 ## Project Showcase
 
-* **[Vortex-Induced Vibration \\( \lvert \\) Ansys Fluent \( \lvert \\) 2026](vortex-induced-vibrations/)**
+* **[Vortex-Induced Vibration \\( \lvert \\) Ansys Fluent \\( \lvert \\) 2026](vortex-induced-vibrations/)**
   *Brief description: 2D cylinder CFD analysis capturing vortex shedding and wake-structure interaction.*
 
-* **[CFD-FEM One-Way Coupling \( \lvert \\) Ansys Products \( \lvert \\) 2025](cfd-fem-coupling/)**
+* **[CFD-FEM One-Way Coupling \\( \lvert \\) Ansys Products \\( \lvert \\) 2025](cfd-fem-coupling/)**
   *Brief description: Aircraft wing optimization through FEM and modal analysis.*
 
 ---
