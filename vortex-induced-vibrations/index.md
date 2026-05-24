@@ -28,9 +28,12 @@ $$\ddot{y}+2\zeta\omega_n\dot{y}+\omega_n^2y=F_y/m_{eff}$$
 
 where \\( y \\) is the transverse displacement, \\( \omega_n \\) is the natural frequency of the system, \\( \zeta \\) is the damping ratio, \\( F_y \\) is the fluid force in the transverse direction and \\( m_{eff} \\) is the effective mass.
 
-![Figure 1 - Single degree of freedom model](images/viv_model.png)
-
-***Figure 1** - Single degree of freedom model: the model intentionally neglects in-line motion to isolate cross-flow dynamics.*
+<figure style="text-align: center; margin: 20px 0;">
+  <img src="images/viv_model.png" alt="Simulazione" style="max-width: 100%; border-radius: 4px;">
+  <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
+    <em> <b>Figure 1</b> - Single degree of freedom model: the model intentionally neglects in-line motion to isolate cross-flow dynamics.</em>
+  </figcaption>
+</figure>
 
 # 3 Setup
 ## 3.1 Input Data
