@@ -1,0 +1,16 @@
+---
+---
+@import "{{ site.theme }}";
+
+/* Applichiamo la modifica solo su desktop (min-width: 960px) per mantenere perfetto il sito su smartphone */
+@media screen and (min-width: 960px) {
+  
+  .wrapper {
+    width: 1160px; /* Larghezza totale della pagina (Originale: 860px) */
+  }
+  
+  section {
+    width: 800px; /* Larghezza dell'area testo/contenuti (Originale: 500px) */
+  }
+  
+}
