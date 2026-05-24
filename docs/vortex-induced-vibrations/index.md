@@ -1,9 +1,6 @@
----
-layout: project
-title: 2D Vortex-Induced Vibrations
----
-
 [← Back to Showcase](../index.html)
+
+# 2D Vortex-Induced Vibrations
 
 # 1. Introduction
 Vortex-Induced Vibrations (VIV) are a fluid–structure interaction phenomenon that occurs when a fluid flow passes around a bluff body, such as a cylinder, generating alternating vortices in its wake (Kármán vortex street).
