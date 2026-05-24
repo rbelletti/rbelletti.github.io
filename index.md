@@ -1,7 +1,3 @@
----
-layout: main
----
-
 # Welcome to my Portfolio
 
 Hi! I’m Riccardo, a Master’s student in Mechanical Engineering. This is my personal portfolio with selected academic projects in design, analysis, and engineering problem-solving. It is a continuously evolving collection of work. Feel free to explore!
