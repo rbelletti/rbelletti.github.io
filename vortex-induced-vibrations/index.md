@@ -26,7 +26,7 @@ The governing equation of motion is:
 
 $$\ddot{y}+2\zeta\omega_n\dot{y}+\omega_n^2y=F_y/m_{eff}$$
 
-where \( y \) is the transverse displacement, \( \omega_n \) is the natural frequency of the system, \( \zeta \) is the damping ratio, \( F_y \) is the fluid force in the transverse direction and \( m_{eff} \) is the effective mass.
+where \\( y \\) is the transverse displacement, \\( \omega_n \\) is the natural frequency of the system, \\( \zeta \\) is the damping ratio, \\( F_y \\) is the fluid force in the transverse direction and \\( m_{eff} \\) is the effective mass.
 
 ![Figure 1 - Single degree of freedom model](images/viv_model.png)
 
@@ -39,19 +39,19 @@ Different inlet velocity values are considered in order to investigate the syste
 
 $$Re=\frac{\rho U D}{\mu}$$
 
-where \( \rho \) is the fluid density, \( U \) is the inlet velocity, \( D \) is cylinder diameter and \( \mu \) is the fluid viscosity.
+where \\( \rho \\) is the fluid density, \\( U \\) is the inlet velocity, \\( D \\) is cylinder diameter and \\( \mu \\) is the fluid viscosity.
 
-| \( U \) [m/s] | \( Re \) |
+| \\( U \\) [m/s] | \\( Re \\) |
 | :--- | :--- |
-| 10.1 | \( 3.46 \cdot 10^6 \) |
-| 16.4 | \( 5.61 \cdot 10^6 \) |
-| 22.6 | \( 7.75 \cdot 10^6 \) |
-| 28.9 | \( 9.90 \cdot 10^6 \) |
-| 35.2 | \( 1.20 \cdot 10^7 \) |
+| 10.1 | \\( 3.46 \cdot 10^6 \\) |
+| 16.4 | \\( 5.61 \cdot 10^6 \\) |
+| 22.6 | \\( 7.75 \cdot 10^6 \\) |
+| 28.9 | \\( 9.90 \cdot 10^6 \\) |
+| 35.2 | \\( 1.20 \cdot 10^7 \\) |
 
 ## 3.2 Geometry and Computational Domain
 
-The problem is modeled as a two-dimensional flow around a circular cylinder with diameter \( D=5 \, m \).
+The problem is modeled as a two-dimensional flow around a circular cylinder with diameter \\( D=5 \, m \\).
 
 The computational domain is designed to minimize boundary effects while keeping the computational cost reasonable. The inlet and lateral boundaries are placed sufficiently far from the cylinder to ensure that the flow development and vortex shedding are not artificially constrained by the domain size.
 
@@ -75,7 +75,7 @@ Proper resolution of the boundary layer is required to accurately capture near-w
 
 $$\delta \approx \frac{0.37x}{\sqrt{Re}}, \quad x \approx 0.5 \pi D$$
 
-The height of the first near-wall cell is determined based on a target wall distance \( y^+ \approx 1 \):
+The height of the first near-wall cell is determined based on a target wall distance \\( y^+ \approx 1 \\):
 
 $$y=\frac{y^+\nu}{u_\tau}$$
 
@@ -83,28 +83,28 @@ where the friction velocity is obtained from the skin friction coefficient:
 
 $$C_f=\frac{0.079}{\sqrt[4]{x}}, \quad u_{\tau}=U_{\infty}\sqrt{\frac{C_f}{2}}$$
 
-The inflation layer is then defined such that its total thickness matches the estimated boundary layer thickness \( \delta \). Assuming a geometric growth rate \( r \), the number of layers \( N \) is computed from:
+The inflation layer is then defined such that its total thickness matches the estimated boundary layer thickness \\( \delta \\). Assuming a geometric growth rate \\( r \\), the number of layers \\( N \\) is computed from:
 
 $$\delta=h\sum_{i=1}^{N}r^i=h\frac{r^N-1}{r-1}$$
 
 ## 3.5 Solver Setup
-The flow is modeled as incompressible, viscous air and solved using a transient approach. Simulations are performed using the SST \( k-\omega \) turbulence model. The time step is chosen based on the oscillation period:
+The flow is modeled as incompressible, viscous air and solved using a transient approach. Simulations are performed using the SST \\( k-\omega \\) turbulence model. The time step is chosen based on the oscillation period:
 
 $$\Delta t < \frac{T}{20}$$
 
 ## 3.6 Dynamic Mesh
 A dynamic mesh approach is used to account for the transverse motion of the cylinder. The system is modeled as a single degree-of-freedom oscillator with:
-* mass: \( m=28.5 \, kg \)
-* stiffness: \( k=24.8 \, N/m \)
+* mass: \\( m=28.5 \, kg \\)
+* stiffness: \\( k=24.8 \, N/m \\)
 
 # 4 Results
 ## 4.1 Dimensionless wall distance
 
-The time evolution of the wall unit \( y^+ \) is shown in Figure 5. The value remains nearly constant and close to 1 throughout the simulation.
+The time evolution of the wall unit \\( y^+ \\) is shown in Figure 5. The value remains nearly constant and close to 1 throughout the simulation.
 
 ![Figure 5 - Time evolution of the wall unit](images/image39.png)
 
-***Figure 5** - Time evolution of the wall unit \( y^+ \) showing values close to 1.*
+***Figure 5** - Time evolution of the wall unit \\( y^+ \\) showing values close to 1.*
 
 ## 4.2 Frequency-domain analysis
 The power spectral density (PSD) of the aerodynamic coefficients and transverse displacement is shown in Figure 6.
@@ -113,21 +113,21 @@ The power spectral density (PSD) of the aerodynamic coefficients and transverse 
 
 ***Figure 6** - PSD of aerodynamic coefficients and transverse displacement.*
 
-To quantify the response, the mean values \( \overline{X} \) and oscillation amplitudes \( |X| \) are reported in the table below.
+To quantify the response, the mean values \\( \overline{X} \\) and oscillation amplitudes \\( |X| \\) are reported in the table below.
 
-| \( Re \) | \( \overline{C_l} \pm |C_l| \) | \( \overline{C_d} \pm |C_d| \) | \( \overline{y} \pm |y| \) |
+| \\( Re \\) | \\( \overline{C_l} \pm |C_l| \\) | \\( \overline{C_d} \pm |C_d| \\) | \\( \overline{y} \pm |y| \\) |
 | :--- | :--- | :--- | :--- |
-| \( 3.46 \cdot 10^6 \) | \( 0.009 \pm 0.351 \) | \( 0.560 \pm 0.032 \) | \( -1.710 \, m \pm 0.290 \, m \) |
-| \( 5.61 \cdot 10^6 \) | \( 0.003 \pm 0.022 \) | \( 0.373 \pm 0.000 \) | \( -1.713 \, m \pm 0.105 \, m \) |
-| \( 7.75 \cdot 10^6 \) | \( 0.001 \pm 0.024 \) | \( 0.335 \pm 0.000 \) | \( -1.738 \, m \pm 0.179 \, m \) |
-| \( 9.90 \cdot 10^6 \) | \( 0.003 \pm 0.025 \) | \( 0.349 \pm 0.000 \) | \( -1.472 \, m \pm 0.258 \, m \) |
-| \( 1.20 \cdot 10^7 \) | \( 0.000 \pm 0.247 \) | \( 0.382 \pm 0.036 \) | \( -1.824 \, m \pm 0.524 \, m \) |
+| \\( 3.46 \cdot 10^6 \\) | \\( 0.009 \pm 0.351 \\) | \\( 0.560 \pm 0.032 \\) | \\( -1.710 \, m \pm 0.290 \, m \\) |
+| \\( 5.61 \cdot 10^6 \\) | \\( 0.003 \pm 0.022 \\) | \\( 0.373 \pm 0.000 \\) | \\( -1.713 \, m \pm 0.105 \, m \\) |
+| \\( 7.75 \cdot 10^6 \\) | \\( 0.001 \pm 0.024 \\) | \\( 0.335 \pm 0.000 \\) | \\( -1.738 \, m \pm 0.179 \, m \\) |
+| \\( 9.90 \cdot 10^6 \\) | \\( 0.003 \pm 0.025 \\) | \\( 0.349 \pm 0.000 \\) | \\( -1.472 \, m \pm 0.258 \, m \\) |
+| \\( 1.20 \cdot 10^7 \\) | \\( 0.000 \pm 0.247 \\) | \\( 0.382 \pm 0.036 \\) | \\( -1.824 \, m \pm 0.524 \, m \\) |
 
 Figure 7 summarizes the variation of key quantities with Reynolds number.
 
 ![Figure 7 - Variation of key quantities](images/tab.png)
 
-***Figure 7** - Variation of the lift coefficient amplitude \( |C_l| \), mean drag coefficient \( \overline{C_d} \) and transverse displacement amplitude \( |y| \) with Reynolds number.*
+***Figure 7** - Variation of the lift coefficient amplitude \\( |C_l| \\), mean drag coefficient \\( \overline{C_d} \\) and transverse displacement amplitude \\( |y| \\) with Reynolds number.*
 
 # 5 Conclusion
 ## 5.1 Limitations of the present model
