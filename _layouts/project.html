@@ -31,3 +31,12 @@ section {
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
+
+<script>
+  // Questo script forza MathJax a ri-processare la pagina dopo che è stata caricata
+  window.addEventListener('load', function() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  });
+</script>
