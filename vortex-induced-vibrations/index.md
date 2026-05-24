@@ -117,7 +117,7 @@ The time evolution of the wall unit \\( y^+ \\) is shown in Figure 5. The value 
 <figure style="text-align: center; margin: 20px 0;">
   <img src="images/yplus.png" alt="Time evolution of the wall unit y^+" style="max-width: 100%; border-radius: 4px;">
   <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
-    <em><b>Figure 5</b> - Time evolution of the wall unit \\( y^+ \\) showing values close to 1.</em>
+    <em><b>Figure 5</b> - Time evolution of the wall unit $$y^+$$ showing values close to 1.</em>
   </figcaption>
 </figure>
 
