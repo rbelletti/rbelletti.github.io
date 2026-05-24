@@ -1,8 +1,0 @@
-title: Welcome to my Portfolio
-description: Mechanical Engineering M.Sc. Candidate | Data Analysis & System Dynamics Simulation
-url: "https://rbelletti.github.io"
-
-remote_theme: raviriley/agency-jekyll-theme
-
-plugins:
-  - jekyll-remote-theme
