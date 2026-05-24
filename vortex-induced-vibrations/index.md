@@ -62,11 +62,11 @@ The computational domain is designed to minimize boundary effects while keeping 
 ## 3.3 Mesh Strategy
 A non-uniform mesh is used to resolve the boundary layer around the cylinder and the wake region where vortex shedding develops. An inflation layer is applied near the cylinder wall to properly capture near-wall gradients and the boundary layer (see Figure 3). A local refinement zone (body of influence) is introduced around the cylinder (see Figure 4) to resolve velocity gradients and flow separation while limiting numerical diffusion in the wake.
 
-![Figure 3 - Boundary layer mesh](images/mesh2.png)
+![Figure 3 - Boundary layer mesh](images/mesh1.png)
 
 ***Figure 3** - Boundary layer mesh (image used courtesy of ANSYS, Inc.).*
 
-![Figure 4 - Wake region mesh](images/mesh1.png)
+![Figure 4 - Wake region mesh](images/mesh2.png)
 
 ***Figure 4** - Wake region mesh (image used courtesy of ANSYS, Inc.).*
 
@@ -102,7 +102,7 @@ A dynamic mesh approach is used to account for the transverse motion of the cyli
 
 The time evolution of the wall unit \\( y^+ \\) is shown in Figure 5. The value remains nearly constant and close to 1 throughout the simulation.
 
-![Figure 5 - Time evolution of the wall unit](images/image39.png)
+![Figure 5 - Time evolution of the wall unit](images/yplus.png)
 
 ***Figure 5** - Time evolution of the wall unit \\( y^+ \\) showing values close to 1.*
 
@@ -113,9 +113,9 @@ The power spectral density (PSD) of the aerodynamic coefficients and transverse 
 
 ***Figure 6** - PSD of aerodynamic coefficients and transverse displacement.*
 
-To quantify the response, the mean values \\( \overline{X} \\) and oscillation amplitudes \\( |X| \\) are reported in the table below.
+To quantify the response, the mean values \\( \overline{X} \\) and oscillation amplitudes \\( \lvert X \lvert \\) are reported in the table below.
 
-| \\( Re \\) | \\( \overline{C_l} \pm |C_l| \\) | \\( \overline{C_d} \pm |C_d| \\) | \\( \overline{y} \pm |y| \\) |
+| \\( Re \\) | \\( \overline{C_l} \pm \lvert C_l \lvert \\) | \\( \overline{C_d} \pm \lvert C_d \lvert \\) | \\( \overline{y} \pm \lvert y \lvert \\) |
 | :--- | :--- | :--- | :--- |
 | \\( 3.46 \cdot 10^6 \\) | \\( 0.009 \pm 0.351 \\) | \\( 0.560 \pm 0.032 \\) | \\( -1.710 \, m \pm 0.290 \, m \\) |
 | \\( 5.61 \cdot 10^6 \\) | \\( 0.003 \pm 0.022 \\) | \\( 0.373 \pm 0.000 \\) | \\( -1.713 \, m \pm 0.105 \, m \\) |
@@ -125,7 +125,7 @@ To quantify the response, the mean values \\( \overline{X} \\) and oscillation a
 
 Figure 7 summarizes the variation of key quantities with Reynolds number.
 
-![Figure 7 - Variation of key quantities](images/tab.png)
+![Figure 7 - Variation of key quantities](images/reynolds.png)
 
 ***Figure 7** - Variation of the lift coefficient amplitude \\( |C_l| \\), mean drag coefficient \\( \overline{C_d} \\) and transverse displacement amplitude \\( |y| \\) with Reynolds number.*
 
