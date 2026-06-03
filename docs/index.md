@@ -4,7 +4,7 @@ Hi! I’m Riccardo, a Master’s student in Mechanical Engineering. This is my p
 
 ## Project Showcase
 
-**[2D SDOF Vortex-Induced Vibration Investigation | Ansys Fluent, MATLAB | 2026](vortex-induced-vibration/)**<br>
+**[2D SDOF Vortex-Induced Vibration Investigation | Ansys Fluent, MATLAB | 2026](vortex-induced-vibration/report.md)**<br>
 *Investigated vortex-induced vibrations (VIV) of a 2D cylinder across low and high Reynolds regimes. Implemented transient CFD simulations with dynamic meshing and developed a MATLAB script for aerodynamic post-processing and lift/drag coefficient analysis.*
 
 **Structural Analysis of a Light Aircraft Wing | ANSYS Mechanical, ANSYS Fluent | 2025**<br>
@@ -13,7 +13,7 @@ Hi! I’m Riccardo, a Master’s student in Mechanical Engineering. This is my p
 **Cricket Detection and Clustering in Images | Python | 2024**<br>
 *Developed a modular Python pipeline for insect detection and automated clustering. Implemented adaptive thresholding, pixel-wise feature extraction, and DBSCAN segmentation, incorporating unit testing to ensure code reliability.*
 
-**[Experimental Modal Analysis of a Floating Brake Disc | Siemens Simcenter Testlab | 2023](https://veiled-echo-e9c.notion.site/Modal-Testing-35ca9d6b51c780d9aae1e48d69707705?)**<br>
+**[Experimental Modal Analysis of a Floating Brake Disc | Siemens Simcenter Testlab | 2023](modal-testing/report.md)**<br>
 *Conducted experimental modal analysis (EMA) of a floating brake disc. Performed impact hammer testing, FRF acquisition, and stabilization diagram-based modal identification to extract natural frequencies and mode shapes.*
 
 ---
