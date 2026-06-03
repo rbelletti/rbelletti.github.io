@@ -10,13 +10,13 @@ theme:
     - navigation.tabs
 
 nav:
-  - Home: index.md
-  - Modal Testing: modal-testing/report.md
-  - Vortex Vibrations: vortex-induced-vibrations/report.md
-  - Airfoil Analysis: airfoil-analysis/report.md
+  - Home: docs/index.md
+  - Modal Testing: docs/modal-testing/report.md
+  - Vortex Vibrations: docs/vortex-induced-vibrations/report.md
+  - Airfoil Analysis: docs/airfoil-analysis/report.md
 
 extra_javascript:
-  - javascripts/mathjax.js
+  - docs/javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 markdown_extensions:
