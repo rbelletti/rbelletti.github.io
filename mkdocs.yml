@@ -10,7 +10,7 @@ theme:
     - navigation.tabs
 
 nav:
-  - Home: docs/index.md
+  - Home: index.md
   - Modal Testing: docs/modal-testing/report.md
   - Vortex Vibrations: docs/vortex-induced-vibrations/report.md
   - Airfoil Analysis: docs/airfoil-analysis/report.md
