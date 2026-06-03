@@ -4,7 +4,7 @@ Hi! I’m Riccardo, a Master’s student in Mechanical Engineering. This is my p
 
 ## Project Showcase
 
-**[2D SDOF Vortex-Induced Vibration Investigation | Ansys Fluent, MATLAB | 2026](https://veiled-echo-e9c.notion.site/2D-Vortex-Induced-Vibrations-36aa9d6b51c780c3ab6adf81bb31740e?)**<br>
+**[2D SDOF Vortex-Induced Vibration Investigation | Ansys Fluent, MATLAB | 2026](vortex-induced-vibration)**<br>
 *Investigated vortex-induced vibrations (VIV) of a 2D cylinder across low and high Reynolds regimes. Implemented transient CFD simulations with dynamic meshing and developed a MATLAB script for aerodynamic post-processing and lift/drag coefficient analysis.*
 
 **Structural Analysis of a Light Aircraft Wing | ANSYS Mechanical, ANSYS Fluent | 2025**<br>
