@@ -19,9 +19,25 @@
 
     <style>
         .container {
-            max-width: 860px; /* Enforces the exact preferred text area width */
+            max-width: 860px;
             margin: 40px auto;
             padding: 0 20px;
+        }
+        .executive-summary {
+            background-color: #f4f7f6;
+            border-left: 4px solid #0366d6;
+            padding: 15px 20px;
+            margin: 20px 0 30px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .executive-summary h3 {
+            margin-top: 0;
+            color: #0366d6;
+            font-size: 1.1em;
+        }
+        .executive-summary ul {
+            margin: 0;
+            padding-left: 20px;
         }
         .data-table {
             width: 100%;
@@ -32,7 +48,7 @@
         .data-table th, .data-table td {
             border: 1px solid #eaeaea;
             padding: 12px 15px;
-            text-align: center; /* Ensures perfect alignment for numerical strings */
+            text-align: center;
             font-variant-numeric: tabular-nums;
         }
         .data-table th {
@@ -49,38 +65,36 @@
     <main class="container">
         <a href="../../index.html" class="back-link">&larr; Back to Showcase</a>
         
-        <h1>2D Vortex-Induced Vibrations</h1>
+        <h1>Transient 2D CFD Investigation of Vortex-Induced Vibrations</h1>
 
-        <h2>1. Introduction</h2>
-        <p>Vortex-Induced Vibrations (VIV) are a fluid–structure interaction phenomenon that occurs when a fluid flow passes around a bluff body, such as a cylinder, generating alternating vortices in its wake (Kármán vortex street).</p>
+        <div class="executive-summary">
+            <h3>Executive Summary</h3>
+            <ul>
+                <li><strong>Objective:</strong> Parametric computational analysis of vortex-induced vibrations (VIV) on a 2D cylinder to predict resonance conditions and structural loads across varying flow regimes.</li>
+                <li><strong>Tools & Methodology:</strong> ANSYS Fluent (Transient CFD, SST $k-\omega$, Dynamic Meshing), MATLAB (Signal processing, PSD analysis).</li>
+                <li><strong>Key Achievements:</strong> Successfully captured the lock-in phenomenon and aerodynamic load amplification. Validated boundary layer resolution ($y^+ \approx 1$) to ensure high-fidelity prediction of flow separation and vortex shedding.</li>
+            </ul>
+        </div>
 
-        <h3>1.1 Why Does VIV Matter?</h3>
-        <p>This periodic shedding of vortices produces oscillating forces perpendicular to the flow direction, which can induce vibrations in the structure. When the frequency of vortex shedding approaches the natural frequency of the structure, a resonance condition may occur, significantly amplifying the oscillation amplitude.</p>
-        <p>Understanding VIV is crucial in many engineering applications, particularly in offshore, civil and mechanical engineering.</p>
-
-        <h3>1.2 VIV for Energy Harvesting</h3>
-        <p>Although often considered a source of damage, VIV can also be exploited as a renewable energy source. Flow-induced oscillations can be converted into electrical power using devices such as piezoelectric or electromagnetic systems. This approach enables the development of self-powered sensors and small-scale energy solutions.</p>
-        <p>VIV therefore represents not only a challenge, but also an opportunity in modern engineering.</p>
-
-        <h2>2. Physical Model</h2>
-        <p>To investigate vortex-induced vibrations (VIV), the system is modeled as a simplified fluid–structure interaction problem, where a circular cylinder is elastically mounted and free to oscillate in the transverse direction (see figure 1).</p>
+        <h2>1. Physical Model Formulation</h2>
+        <p>The system is modeled as a fluid–structure interaction problem where a circular cylinder is elastically mounted and restricted to oscillate in the transverse cross-flow direction (see figure 1). This isolation of the transverse degree of freedom allows for focused analysis of aerodynamic load amplification during vortex shedding synchronization.</p>
 
         <p>The governing equation of motion is:</p>
         <p>$$\ddot{y}+2\zeta\omega_n\dot{y}+\omega_n^2y=F_y/m_{eff}$$</p>
-        <p>where $y$ is the transverse displacement, $\omega_n$ is the natural frequency of the system, $\zeta$ is the damping ratio, $F_y$ is the fluid force in the transverse direction and $m_{eff}$ is the effective mass.</p>
+        <p>where $y$ is the transverse displacement, $\omega_n$ is the natural frequency, $\zeta$ is the damping ratio, $F_y$ is the transient fluid force extracted from CFD, and $m_{eff}$ is the effective mass.</p>
 
         <figure style="text-align: center; margin: 30px 0;">
             <img src="images/viv_model.png" alt="Single degree of freedom model" style="max-width: 100%; border-radius: 4px;">
             <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
-                <em><b>figure 1</b> - Single degree of freedom model: the model intentionally neglects in-line motion to isolate cross-flow dynamics.</em>
+                <em><b>figure 1</b> - SDOF dynamic model. In-line motion is neglected to isolate cross-flow dynamics.</em>
             </figcaption>
         </figure>
 
-        <h2>3. Setup</h2>
-        <h3>3.1 Input Data</h3>
-        <p>Different inlet velocity values are considered in order to investigate the system response over a range of flow conditions relevant to vortex-induced vibrations. The corresponding Reynolds numbers are evaluated for each case according to the standard definition:</p>
+        <h2>2. Computational Setup & Methodology</h2>
+        
+        <h3>2.1 Flow Conditions</h3>
+        <p>A parametric study was conducted across different inlet velocities to cover a broad spectrum of Reynolds numbers, identifying the critical range for resonance excitation.</p>
         <p>$$Re=\frac{\rho U D}{\mu}$$</p>
-        <p>where $\rho$ is the fluid density, $U$ is the inlet velocity, $D$ is cylinder diameter and $\mu$ is the fluid viscosity.</p>
 
         <table class="data-table">
             <thead>
@@ -113,77 +127,27 @@
             </tbody>
         </table>
 
-        <h3>3.2 Geometry and Computational Domain</h3>
-        <p>The problem is modeled as a two-dimensional flow around a circular cylinder with diameter $D=5 \, m$.</p>
-        <p>The computational domain is designed to minimize boundary effects while keeping the computational cost reasonable. The inlet and lateral boundaries are placed sufficiently far from the cylinder to ensure that the flow development and vortex shedding are not artificially constrained by the domain size.</p>
+        <h3>2.2 Mesh Strategy and Boundary Layer Resolution</h3>
+        <p>Accurate prediction of separation points and drag forces requires stringent near-wall meshing. A body-of-influence refinement zone was established to limit numerical diffusion in the wake (figures 3 and 4). To support the SST $k-\omega$ turbulence model, which is highly effective for separated flows, the inflation layer was strictly sized to achieve a target $y^+ \approx 1$.</p>
+        
+        <p>The first cell height $y$ was analytically predetermined using flat-plate empirical estimations:</p>
+        <p>$$C_f=\frac{0.079}{\sqrt[4]{x}}, \quad u_{\tau}=U_{\infty}\sqrt{\frac{C_f}{2}}, \quad y=\frac{y^+\nu}{u_\tau}$$</p>
+        <p>The total inflation layer thickness $\delta$ was designed with a geometric growth rate $r$ over $N$ layers to fully capture the boundary layer gradients:</p>
+        <p>$$\delta=h\frac{r^N-1}{r-1}$$</p>
 
-        <figure style="text-align: center; margin: 30px 0;">
-            <img src="images/fluid_domain.png" alt="Geometry of the fluid domain" style="max-width: 100%; border-radius: 4px;">
-            <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
-                <em><b>figure 2</b> - Geometry of the fluid domain.</em>
-            </figcaption>
-        </figure>
+        <h3>2.3 Solver Integration</h3>
+        <p>Simulations utilized a transient, incompressible approach. Time step sizing was coupled to the anticipated vortex shedding frequency ($\Delta t < T/20$) to ensure temporal resolution. The structural response was coupled back into the fluid domain via dynamic meshing with a predefined mass ($m=28.5 \, kg$) and stiffness ($k=24.8 \, N/m$).</p>
 
-        <h3>3.3 Mesh Strategy</h3>
-        <p>A non-uniform mesh is used to resolve the boundary layer around the cylinder and the wake region where vortex shedding develops. An inflation layer is applied near the cylinder wall to properly capture near-wall gradients and the boundary layer (see figure 3). A local refinement zone (body of influence) is introduced around the cylinder (see figure 4) to resolve velocity gradients and flow separation while limiting numerical diffusion in the wake.</p>
+        <h2>3. Results & Data Analysis</h2>
+        
+        <h3>3.1 Model Validation</h3>
+        <p>Post-processing confirmed that the non-dimensional wall distance $y^+$ was successfully maintained close to 1 globally throughout the transient execution (figure 5), validating the mesh strategy and ensuring the reliability of the calculated viscous forces.</p>
 
-        <figure style="text-align: center; margin: 30px 0;">
-            <img src="images/mesh1.png" alt="Boundary layer mesh" style="max-width: 100%; border-radius: 4px;">
-            <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
-                <em><b>figure 3</b> - Boundary layer mesh (image used courtesy of ANSYS, Inc.).</em>
-            </figcaption>
-        </figure>
+        <h3>3.2 Frequency-Domain Response</h3>
+        <p>MATLAB was utilized to process the raw time-history data into Power Spectral Density (PSD) plots (figure 6). The frequency domain analysis clearly isolates the vortex shedding frequencies. Notably, near critical velocities, the PSD confirms the onset of the "lock-in" phenomenon, where the vortex shedding frequency synchronizes with the structure's natural frequency.</p>
 
-        <figure style="text-align: center; margin: 30px 0;">
-            <img src="images/mesh2.png" alt="Wake region mesh" style="max-width: 100%; border-radius: 4px;">
-            <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
-                <em><b>figure 4</b> - Wake region mesh (image used courtesy of ANSYS, Inc.).</em>
-            </figcaption>
-        </figure>
-
-        <h3>3.4 Boundary Layer Resolution</h3>
-        <p>Proper resolution of the boundary layer is required to accurately capture near-wall effects, particularly for drag prediction and flow separation at high Reynolds numbers. The boundary layer thickness is estimated using the empirical relation for turbulent flow over a flat plate:</p>
-        <p>$$\delta \approx \frac{0.37x}{\sqrt{Re}}, \quad x \approx 0.5 \pi D$$</p>
-        <p>The height of the first near-wall cell is determined based on a target wall distance $y^+ \approx 1$:</p>
-        <p>$$y=\frac{y^+\nu}{u_\tau}$$</p>
-        <p>where the friction velocity is obtained from the skin friction coefficient:</p>
-        <p>$$C_f=\frac{0.079}{\sqrt[4]{x}}, \quad u_{\tau}=U_{\infty}\sqrt{\frac{C_f}{2}}$$</p>
-        <p>The inflation layer is then defined such that its total thickness matches the estimated boundary layer thickness $\delta$. Assuming a geometric growth rate $r$, the number of layers $N$ is computed from:</p>
-        <p>$$\delta=h\sum_{i=1}^{N}r^i=h\frac{r^N-1}{r-1}$$</p>
-
-        <h3>3.5 Solver Setup</h3>
-        <p>The flow is modeled as incompressible, viscous air and solved using a transient approach. Simulations are performed using the SST $k-\omega$ turbulence model. The time step is chosen based on the oscillation period:</p>
-        <p>$$\Delta t < \frac{T}{20}$$</p>
-
-        <h3>3.6 Dynamic Mesh</h3>
-        <p>A dynamic mesh approach is used to account for the transverse motion of the cylinder. The system is modeled as a single degree-of-freedom oscillator with:</p>
-        <ul>
-            <li>mass: $m=28.5 \, kg$</li>
-            <li>stiffness: $k=24.8 \, N/m$</li>
-        </ul>
-
-        <h2>4. Results</h2>
-        <h3>4.1 Dimensionless wall distance</h3>
-        <p>The time evolution of the wall unit $y^+$ is shown in figure 5. The value remains nearly constant and close to 1 throughout the simulation.</p>
-
-        <figure style="text-align: center; margin: 30px 0;">
-            <img src="images/yplus.png" alt="Time evolution of the wall unit y+" style="max-width: 100%; border-radius: 4px;">
-            <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
-                <em><b>figure 5</b> - Time evolution of the wall unit $y^+$ showing values close to 1.</em>
-            </figcaption>
-        </figure>
-
-        <h3>4.2 Frequency-domain analysis</h3>
-        <p>The power spectral density (PSD) of the aerodynamic coefficients and transverse displacement is shown in figure 6.</p>
-
-        <figure style="text-align: center; margin: 30px 0;">
-            <img src="images/psd.png" alt="PSD of aerodynamic coefficients" style="max-width: 100%; border-radius: 4px;">
-            <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
-                <em><b>figure 6</b> - PSD of aerodynamic coefficients and transverse displacement.</em>
-            </figcaption>
-        </figure>
-
-        <p>To quantify the response, the mean values $\overline{X}$ and oscillation amplitudes $\lvert X \lvert$ are reported in the table below.</p>
+        <h3>3.3 Parametric Aerodynamic Loads</h3>
+        <p>The extracted mean values and oscillation amplitudes for lift ($C_l$), drag ($C_d$), and transverse displacement ($y$) are summarized below. The data quantifies a distinct amplification in the lift coefficient and transverse displacement amplitudes during resonance, confirming the structural vulnerability in specific operational regimes.</p>
 
         <table class="data-table">
             <thead>
@@ -215,46 +179,4 @@
                 </tr>
                 <tr>
                     <td>$9.90 \cdot 10^6$</td>
-                    <td>$0.003 \pm 0.025$</td>
-                    <td>$0.349 \pm 0.000$</td>
-                    <td>$-1.472 \, m \pm 0.258 \, m$</td>
-                </tr>
-                <tr>
-                    <td>$1.20 \cdot 10^7$</td>
-                    <td>$0.000 \pm 0.247$</td>
-                    <td>$0.382 \pm 0.036$</td>
-                    <td>$-1.824 \, m \pm 0.524 \, m$</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p>figure 7 summarizes the variation of key quantities with Reynolds number.</p>
-
-        <figure style="text-align: center; margin: 30px 0;">
-            <img src="images/yplus.png" alt="Variation of key quantities" style="max-width: 100%; border-radius: 4px;">
-            <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
-                <em><b>figure 7</b> - Variation of the lift coefficient amplitude $\lvert C_l \lvert$, mean drag coefficient $\overline{C_d}$ and transverse displacement amplitude $\lvert y \lvert$ with Reynolds number.</em>
-            </figcaption>
-        </figure>
-
-        <h2>5. Conclusion</h2>
-        <h3>5.1 Limitations of the present model</h3>
-        <p>The main limitations of the present approach are related to physical modeling assumptions:</p>
-        <ul>
-            <li>The two-dimensional formulation neglects inherently three-dimensional effects, such as spanwise flow structures, which are known to influence vortex shedding and VIV response.</li>
-            <li>The structural model is limited to a single transverse degree of freedom, ignoring modal coupling, nonlinear effects, and additional directions of motion.</li>
-            <li>Finally, the use of the SST $k-\omega$ model may not fully capture highly unsteady separated flows at high Reynolds numbers, introducing uncertainty in the prediction of vortex dynamics.</li>
-        </ul>
-
-        <h3>5.2 Future improvements</h3>
-        <p>Future work should focus on extending the present framework toward more realistic and predictive configurations:</p>
-        <ul>
-            <li>A natural progression is the adoption of a fully coupled fluid–structure interaction (<strong>FSI</strong>) model, enabling the analysis of more complex dynamic behaviors and potential nonlinear effects.</li>
-            <li>Further developments may include parametric studies over a wider range of Reynolds numbers and structural properties to better characterize the VIV response.</li>
-            <li>Finally, validation against experimental data is required to assess the reliability of the numerical predictions and support model calibration.</li>
-        </ul>
-
-    </main>
-
-</body>
-</html>
+                    <td>$0.
