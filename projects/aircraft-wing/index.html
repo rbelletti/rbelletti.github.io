@@ -18,46 +18,14 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <style>
-        .container {
-            max-width: 860px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        .executive-summary {
-            background-color: #f4f7f6;
-            border-left: 4px solid #0366d6;
-            padding: 15px 20px;
-            margin: 20px 0 30px 0;
-            border-radius: 0 4px 4px 0;
-        }
-        .executive-summary h3 {
-            margin-top: 0;
-            color: #0366d6;
-            font-size: 1.1em;
-        }
-        .executive-summary ul {
-            margin: 0;
-            padding-left: 20px;
-        }
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 25px 0;
-            font-size: 0.95em;
-        }
-        .data-table th, .data-table td {
-            border: 1px solid #eaeaea;
-            padding: 12px 15px;
-            text-align: center;
-            font-variant-numeric: tabular-nums;
-        }
-        .data-table th {
-            background-color: #f8f9fa;
-            font-weight: 600;
-        }
-        .data-table tbody tr:nth-of-type(even) {
-            background-color: #fdfdfd;
-        }
+        .container { max-width: 860px; margin: 40px auto; padding: 0 20px; }
+        .executive-summary { background-color: #f4f7f6; border-left: 4px solid #0366d6; padding: 15px 20px; margin: 20px 0 30px 0; border-radius: 0 4px 4px 0; }
+        .executive-summary h3 { margin-top: 0; color: #0366d6; font-size: 1.1em; }
+        .executive-summary ul { margin: 0; padding-left: 20px; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.95em; }
+        .data-table th, .data-table td { border: 1px solid #eaeaea; padding: 12px 15px; text-align: center; font-variant-numeric: tabular-nums; }
+        .data-table th { background-color: #f8f9fa; font-weight: 600; }
+        .data-table tbody tr:nth-of-type(even) { background-color: #fdfdfd; }
     </style>
 </head>
 <body>
@@ -70,30 +38,26 @@
         <div class="executive-summary">
             <h3>Executive Summary</h3>
             <ul>
-                <li><strong>Objective:</strong> Comprehensive structural integrity assessment and dynamic characterization of a composite light-aircraft wing under aerodynamic loads[cite: 4, 147].</li>
-                <li><strong>Tools & Methodology:</strong> ANSYS Workbench integrating Fluent (CFD), ACP (Composite PrePost), Mechanical (Static, Modal, Harmonic), and Direct Optimization[cite: 41, 69, 147].</li>
-                <li><strong>Key Achievements:</strong> Successfully mapped 3D CFD pressure fields onto a structural shell/beam model. Evaluated composite failure utilizing Tsai-Wu and Tsai-Hill criteria. Conducted parametric optimization of spar cross-sections and analyzed the pre-stress stiffening effect on natural frequencies[cite: 160, 170].</li>
+                <li><strong>Objective:</strong> Comprehensive structural integrity assessment and dynamic characterization of a composite light-aircraft wing under aerodynamic loads.</li>
+                <li><strong>Tools & Methodology:</strong> ANSYS Workbench (Fluent, ACP, Mechanical) and Direct Optimization.</li>
+                <li><strong>Key Achievements:</strong> Mapping of 3D CFD pressure fields onto a structural shell/beam model, evaluation of composite failure criteria (Tsai-Wu/Tsai-Hill), and analysis of stress-stiffening effects on modal frequencies.</li>
             </ul>
         </div>
 
         <h2>1. Computational Framework & Composite Setup</h2>
-        <p>The structural model represents a light aircraft wing featuring a USA35B airfoil, a span of $10.82 \text{ m}$, and a cruise velocity of $48 \text{ m/s}$[cite: 33]. The internal architecture comprises multiple spars, ribs, and stringers modeled as beam elements (Aluminum Alloy), while the external skin is modeled using shell elements[cite: 121, 122, 191].</p>
+        <p>The structural model represents a light aircraft wing (USA35B airfoil) with a span of $10.82 \text{ m}$ and a cruise velocity of $48 \text{ m/s}$. The architecture features internal spars, ribs, and stringers modeled as beam elements, with the skin represented by shell elements.</p>
         
-        <p>To accurately capture the anisotropic behavior of the wing skin, ANSYS ACP was employed to model an Epoxy Carbon UD Prepreg layup[cite: 123, 139]. The symmetric stacking sequence was defined to optimize torsional stiffness and bending resistance:</p>
+        <p>ANSYS ACP was used to define the anisotropic layup of the carbon fiber skin (symmetric sequence):</p>
         <ul>
-            <li><strong>Layup Sequence:</strong> $[0 / +45 / -45 / +90 / +90 / -45 / +45 / 0] \times 2$ [cite: 139]</li>
-            <li><strong>Ply Thickness:</strong> $0.125 \text{ mm}$ [cite: 139]</li>
+            <li><strong>Layup Sequence:</strong> $[0 / +45 / -45 / +90 / +90 / -45 / +45 / 0] \times 2$</li>
+            <li><strong>Ply Thickness:</strong> $0.125 \text{ mm}$</li>
         </ul>
 
-        <h2>2. Fluid-Structure Interaction & Static Analysis</h2>
-        <p>A one-way Fluid-Structure Interaction (FSI) approach was utilized. Aerodynamic loads were extracted from an ANSYS Fluent simulation conducted at an Angle of Attack (AoA) of $10^{\circ}$[cite: 147]. The resulting pressure field, generating $11832.5 \text{ N}$ of lift and $771.7 \text{ N}$ of drag, was directly mapped onto the mechanical solver as an imported pressure load[cite: 147, 149].</p>
+        <h2>2. FSI and Static Analysis</h2>
+        <p>A one-way Fluid-Structure Interaction (FSI) approach was employed. Aerodynamic pressure fields obtained from Fluent (at $10^{\circ}$ AoA) were mapped as boundary conditions on the mechanical solver. The resulting structural response was validated against Tsai-Wu and Tsai-Hill failure criteria to ensure integrity under limit load conditions.</p>
 
-        <p>Structural integrity was evaluated using composite-specific failure criteria. The Inverse Reserve Factor (IRF) was calculated utilizing both Tsai-Wu and Tsai-Hill criteria. The initial design exhibited a peak IRF of $1.0019$, indicating an imminent risk of localized matrix/fiber failure under the simulated maximum load conditions.</p>
-
-        <h2>3. Parametric Structural Optimization</h2>
-        <p>To mitigate the critical IRF and minimize weight without compromising structural rigidity, a direct parametric optimization was performed on the rectangular cross-sections of the internal spars[cite: 69, 117, 162].</p>
-
-        <p>The optimization successfully identified a candidate configuration that reduced peak combined stresses while keeping structural deformation within operational tolerances.</p>
+        <h2>3. Parametric Optimization</h2>
+        <p>A direct optimization loop was implemented to refine the spar cross-sections, aiming to maximize structural efficiency while maintaining safety margins on composite stress concentrations.</p>
 
         <table class="data-table">
             <thead>
@@ -106,34 +70,22 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Initial [cite: 164, 165]</td>
-                    <td>5.00</td>
-                    <td>15.00</td>
-                    <td>38.01</td>
-                    <td>185.85</td>
-                </tr>
-                <tr>
-                    <td>Optimized [cite: 164, 165]</td>
-                    <td>4.99</td>
-                    <td>16.30</td>
-                    <td>36.30</td>
-                    <td>188.26</td>
-                </tr>
+                <tr><td>Initial</td><td>5.00</td><td>15.00</td><td>38.01</td><td>185.85</td></tr>
+                <tr><td>Optimized</td><td>4.99</td><td>16.30</td><td>36.30</td><td>188.26</td></tr>
             </tbody>
         </table>
 
         <h2>4. Dynamic Characterization</h2>
         
         <h3>4.1 Pre-Stressed Modal Analysis</h3>
-        <p>The modal parameters of the wing were evaluated. Crucially, a pre-stressed modal analysis was conducted to account for the stiffness variations induced by the aerodynamic steady-state loading. The structural tensioning generated by the lift force resulted in a noticeable upward shift in the natural frequencies, commonly known as stress-stiffening[cite: 170, 184].</p>
+        <p>To capture realistic flight dynamics, a pre-stressed modal analysis was performed, accounting for the stiffening effect exerted by the aerodynamic lift. The following table compares the natural frequencies before and after the application of the flight load.</p>
 
         <table class="data-table">
             <thead>
                 <tr>
                     <th>Mode</th>
-                    <th>Unstressed Frequency [Hz] </th>
-                    <th>Pre-Stressed Frequency [Hz] </th>
+                    <th>Unstressed Frequency [Hz]</th>
+                    <th>Pre-Stressed Frequency [Hz]</th>
                 </tr>
             </thead>
             <tbody>
@@ -144,11 +96,8 @@
         </table>
 
         <h3>4.2 Harmonic Response Analysis</h3>
-        <p>A full-method Harmonic Response analysis was subsequently performed over a frequency range of $10 \div 60 \text{ Hz}$ to evaluate the structural behavior under dynamic excitation[cite: 174]. A structural damping coefficient of $0.05$ was applied[cite: 181].</p>
-        
-        <p>The Frequency Response Functions (FRFs) for equivalent Von Mises stresses were extracted, clearly identifying the resonant amplification peaks corresponding to the pre-stressed natural frequencies extracted in the prior step, providing critical data for aeroelastic stability and flutter prevention[cite: 180, 184].</p>
+        <p>A full-method Harmonic Response analysis ($10 \div 60 \text{ Hz}$) was conducted to characterize the wing's dynamic behavior, assessing resonant peaks and verifying susceptibility to aeroelastic instability.</p>
 
     </main>
-
 </body>
 </html>
