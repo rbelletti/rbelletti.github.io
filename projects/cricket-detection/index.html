@@ -91,7 +91,7 @@
         <h2>2. Density-Based Spatial Clustering (DBSCAN)</h2>
         <p>To group the isolated pixels into individual distinct crickets, unsupervised machine learning was applied. The <strong>DBSCAN</strong> (Density-Based Spatial Clustering of Applications with Noise) algorithm from Scikit-learn was selected over traditional methods like K-Means.</p>
         
-        <p>The choice of DBSCAN is highly engineering-driven for this specific application: it groups together points that are closely packed together based on two parameters ($eps$ and $min\_samples$), without requiring a predefined number of clusters. This makes it exceptionally suited for spatial coordinate matrices where the exact number of targets (crickets) is unknown a priori. The resulting cluster map is shown in <strong>Figure 2</strong>.</p>
+        <p>The choice of DBSCAN is highly engineering-driven for this specific application: it groups together points that are closely packed together based on two parameters (<code>eps</code> and <code>min_samples</code>), without requiring a predefined number of clusters. This makes it exceptionally suited for spatial coordinate matrices where the exact number of targets (crickets) is unknown a priori. The resulting cluster map is shown in <strong>Figure 2</strong>.</p>
 
         <figure style="text-align: center; margin: 30px 0;">
             <img src="images/dbscan_output.png" alt="Visual representation of the DBSCAN clustering output, with different colors identifying individual clusters." style="max-width: 100%; border-radius: 4px;">
@@ -103,7 +103,7 @@
         <h2>3. Noise Filtering & Final Results</h2>
         <p>The raw clustering output inevitably contains artifacts due to residual background noise or physical anomalies in the image. A post-processing filtration logic was implemented to evaluate the pixel count (dimension) of each identified cluster.</p>
         
-        <p>By enforcing an upper limit parameter ($N$), any cluster exceeding the expected size of a cricket is classified as an artifact and mathematically excluded (values reset to $-1$ in the image array). The final output dynamically visualizes only the accurately clustered targets, successfully isolating the crickets from the background noise (<strong>Figure 3</strong>).</p>
+        <p>By enforcing an upper limit parameter ($N$), any cluster exceeding the expected size of a cricket is classified as an artifact and mathematically excluded (values reset to -1 in the image array). The final output dynamically visualizes only the accurately clustered targets, successfully isolating the crickets from the background noise (<strong>Figure 3</strong>).</p>
 
         <figure style="text-align: center; margin: 30px 0;">
             <img src="images/final_filtered_result.png" alt="Final processed image showing only the correctly identified and sized cricket clusters." style="max-width: 100%; border-radius: 4px;">
