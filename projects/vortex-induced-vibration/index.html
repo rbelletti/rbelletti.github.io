@@ -131,7 +131,7 @@
         <p>Accurate prediction of separation points and drag forces requires stringent near-wall meshing. A comprehensive computational domain was built around the cylinder to ensure realistic wake development (<strong>Figure 2</strong>). Furthermore, a dedicated body-of-influence refinement zone was established downwind to limit numerical diffusion in the shedding wake, as highlighted in <strong>Figure 3</strong>. To support the SST $k-\omega$ turbulence model, which is highly effective for separated flows, the inflation layer was strictly sized to achieve a target $y^+ \approx 1$.</p>
         
         <figure style="text-align: center; margin: 30px 0;">
-            <img src="images/mesh_domain.png" alt="ANSYS Fluent global mesh domain setup and boundary conditions for the 2D cylinder." style="max-width: 100%; border-radius: 4px;">
+            <img src="images/mesh1.png" alt="ANSYS Fluent global mesh domain setup and boundary conditions for the 2D cylinder." style="max-width: 100%; border-radius: 4px;">
             <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
                 <em><b>Figure 2</b> - Global computational domain layout and boundary conditions implemented for the transient flow simulation.</em>
             </figcaption>
@@ -143,7 +143,7 @@
         <p>$$\delta=h\frac{r^N-1}{r-1}$$</p>
 
         <figure style="text-align: center; margin: 30px 0;">
-            <img src="images/mesh_refinement.png" alt="Close-up of the O-grid inflation layer mesh and Body of Influence refinement around the circular cylinder." style="max-width: 100%; border-radius: 4px;">
+            <img src="images/mesh2.png" alt="Close-up of the O-grid inflation layer mesh and Body of Influence refinement around the circular cylinder." style="max-width: 100%; border-radius: 4px;">
             <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
                 <em><b>Figure 3</b> - Close-up view of the structured O-grid inflation layers and the downwind Body of Influence (BOI) mesh refinement zone.</em>
             </figcaption>
@@ -158,7 +158,7 @@
         <p>Post-processing confirmed that the non-dimensional wall distance $y^+$ was successfully maintained close to 1 globally throughout the transient execution, as shown in <strong>Figure 4</strong>. This validates the near-wall mesh strategy and ensures the high reliability of the calculated viscous forces and separation points.</p>
 
         <figure style="text-align: center; margin: 30px 0;">
-            <img src="images/yplus_validation.png" alt="Transient y-plus distribution plot along the cylinder boundary showing values close to 1." style="max-width: 100%; border-radius: 4px;">
+            <img src="images/yplus.png" alt="Transient y-plus distribution plot along the cylinder boundary showing values close to 1." style="max-width: 100%; border-radius: 4px;">
             <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
                 <em><b>Figure 4</b> - Non-dimensional wall distance ($y^+$) distribution verified along the cylinder wall boundary during transient solver execution.</em>
             </figcaption>
@@ -168,7 +168,7 @@
         <p>MATLAB was utilized to process the raw time-history data into Power Spectral Density (PSD) plots (<strong>Figure 5</strong>). The frequency domain analysis clearly isolates the vortex shedding frequencies. Notably, near critical velocities, the PSD confirms the onset of the "lock-in" phenomenon, where the vortex shedding frequency synchronizes with the structure's natural frequency.</p>
 
         <figure style="text-align: center; margin: 30px 0;">
-            <img src="images/psd_plots.png" alt="Power Spectral Density plot from MATLAB showing frequency synchronization during the lock-in regime." style="max-width: 100%; border-radius: 4px;">
+            <img src="images/psd.png" alt="Power Spectral Density plot from MATLAB showing frequency synchronization during the lock-in regime." style="max-width: 100%; border-radius: 4px;">
             <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
                 <em><b>Figure 5</b> - Power Spectral Density (PSD) analysis of the fluctuating lift coefficient, proving frequency lock-in conditions.</em>
             </figcaption>
