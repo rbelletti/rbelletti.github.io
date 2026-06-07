@@ -45,7 +45,7 @@
         </div>
 
         <h2>1. Computational Framework & Composite Setup</h2>
-        <p>The structural model represents a light aircraft wing (USA35B airfoil) with a span of 10.82 m and a cruise velocity of 48 m/s. The architecture features internal spars, ribs, and stringers modeled as beam elements, with the skin represented by shell elements.</p>
+        <p>The structural model represents a light aircraft wing (USA35B airfoil) with a span of 10.82 m and a cruise velocity of 48 m/s. The architecture features internal spars, ribs, and stringers modeled as beam elements, with the skin represented by shell elements, as shown in <strong>Figure 1</strong>.</p>
 
         <figure style="text-align: center; margin: 30px 0;">
             <img src="images/model.png" alt="ANSYS Mechanical CAD model showing the internal wing architecture including spars, ribs, and stringers." style="max-width: 100%; border-radius: 4px;">
@@ -54,21 +54,21 @@
             </figcaption>
         </figure>
         
-        <p>ANSYS ACP was used to define the anisotropic layup of the carbon fiber skin (symmetric sequence):</p>
+        <p>ANSYS ACP was used to define the anisotropic layup of the carbon fiber skin (symmetric sequence). The resulting polar properties are detailed in <strong>Figure 2</strong>.</p>
         <ul>
             <li><strong>Layup Sequence:</strong> [(0/+45/-45/90)<sub>S</sub>]<sub>2</sub></li>
             <li><strong>Ply Thickness:</strong> 0.125 mm</li>
         </ul>
 
         <figure style="text-align: center; margin: 30px 0;">
-            <img src="images/acp.png" alt="Composite polar properties on ANSYS ACP." style="max-width: 100%; border-radius: 4px;">
+            <img src="images/acp.jpg" alt="Composite polar properties on ANSYS ACP." style="max-width: 100%; border-radius: 4px;">
             <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
                 <em><b>Figure 2</b> - Polar properties from ANSYS ACP: (a) ply stiffness, (b) stack-up stiffness.</em>
             </figcaption>
         </figure>
 
         <h2>2. FSI and Static Analysis</h2>
-        <p>A one-way Fluid-Structure Interaction (FSI) approach was employed. Aerodynamic pressure fields obtained from Fluent (at $10^{\circ}$ AoA) were mapped as boundary conditions on the mechanical solver. The resulting structural response was validated against Tsai-Wu and Tsai-Hill failure criteria to ensure integrity under limit load conditions.</p>
+        <p>A one-way Fluid-Structure Interaction (FSI) approach was employed. Aerodynamic pressure fields obtained from Fluent (at 10° AoA) were mapped as boundary conditions on the mechanical solver (<strong>Figure 3</strong>). The resulting structural response was validated against Tsai-Wu and Tsai-Hill failure criteria to ensure integrity under limit load conditions, highlighting critical load-bearing regions as illustrated in <strong>Figure 4</strong>.</p>
 
         <figure style="text-align: center; margin: 30px 0;">
             <img src="images/imported_pressure.png" alt="Contour plot of aerodynamic pressure distribution mapped onto the wing surface from a CFD simulation." style="max-width: 100%; border-radius: 4px;">
@@ -85,7 +85,7 @@
         </figure>
         
         <h2>3. Parametric Optimization</h2>
-        <p>A direct optimization loop was implemented to refine the spar cross-sections, aiming to maximize structural efficiency while maintaining safety margins on composite stress concentrations.</p>
+        <p>A direct optimization loop was implemented to refine the spar cross-sections, aiming to maximize structural efficiency while maintaining safety margins on composite stress concentrations. The tradeoff results identifying the optimal configuration are represented in <strong>Figure 5</strong>.</p>
 
         <table class="data-table">
             <thead>
