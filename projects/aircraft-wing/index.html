@@ -46,12 +46,26 @@
 
         <h2>1. Computational Framework & Composite Setup</h2>
         <p>The structural model represents a light aircraft wing (USA35B airfoil) with a span of 10.82 m and a cruise velocity of 48 m/s. The architecture features internal spars, ribs, and stringers modeled as beam elements, with the skin represented by shell elements.</p>
+
+        <figure style="text-align: center; margin: 30px 0;">
+            <img src="images/model.png" alt="ANSYS Mechanical CAD model showing the internal wing architecture including spars, ribs, and stringers." style="max-width: 100%; border-radius: 4px;">
+            <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
+                <em><b>Figure 1</b> - Internal beam-element architecture of the wing, exposing the structural spar and rib distribution beneath the composite skin.</em>
+            </figcaption>
+        </figure>
         
         <p>ANSYS ACP was used to define the anisotropic layup of the carbon fiber skin (symmetric sequence):</p>
         <ul>
             <li><strong>Layup Sequence:</strong> [(0/+45/-45/90)<sub>S</sub>]<sub>2</sub></li>
             <li><strong>Ply Thickness:</strong> 0.125 mm</li>
         </ul>
+
+        <figure style="text-align: center; margin: 30px 0;">
+            <img src="images/acp_layup_sequence.png" alt="ANSYS ACP interface displaying the symmetric composite layup sequence and fiber orientations for the wing skin." style="max-width: 100%; border-radius: 4px;">
+            <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
+                <em><b>Figure 2</b> - Composite layup definition in ANSYS ACP, highlighting the multi-layered carbon fiber sequence tailored for torsional stiffness.</em>
+            </figcaption>
+        </figure>
 
         <h2>2. FSI and Static Analysis</h2>
         <p>A one-way Fluid-Structure Interaction (FSI) approach was employed. Aerodynamic pressure fields obtained from Fluent (at $10^{\circ}$ AoA) were mapped as boundary conditions on the mechanical solver. The resulting structural response was validated against Tsai-Wu and Tsai-Hill failure criteria to ensure integrity under limit load conditions.</p>
