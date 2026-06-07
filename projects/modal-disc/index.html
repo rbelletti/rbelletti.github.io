@@ -81,7 +81,7 @@
 
         <p>Data acquisition was performed utilizing Siemens acquisition hardware and Simcenter Testlab. Structural excitation was provided by an instrumented impact hammer, while a piezoelectric accelerometer, mounted with beeswax to minimize mass-loading, tracked the dynamic response across 84 Degrees of Freedom (DOFs).</p>
 
-        <p>Prior to the test campaign, transducer sensitivities were strictly calibrated within the Testlab channel setup to convert voltage signals into highly accurate physical quantities:</p>
+        <p>Prior to the test campaign, transducer sensitivities were strictly calibrated within the Testlab channel setup to convert voltage signals into highly accurate physical quantities. The detailed acquisition and H1 FRF estimation parameters are illustrated in <strong>Figure 1</strong>.</p>
 
         <table class="data-table">
             <thead>
@@ -93,10 +93,11 @@
             <tbody>
                 <tr>
                     <td>Instrumented Impact Hammer</td>
-                    <td>15.9E-03 V/N</td>                </tr>
+                    <td>$15.9 \cdot 10^{-3}$ V/N</td>
+                </tr>
                 <tr>
                     <td>Piezoelectric Accelerometer</td>
-                    <td>5.39E-03 V/g</td>
+                    <td>$5.39 \cdot 10^{-3}$ V/g ($g=9.81 \text{ m/s}^2$)</td>
                 </tr>
             </tbody>
         </table>
@@ -111,7 +112,7 @@
         <h2>2. Measurement Procedure & Signal Quality Assessment</h2>
         <p>A moving-accelerometer approach was adopted for the measurement campaign. To improve signal-to-noise ratio and eliminate random noise effects, five distinct impacts were recorded and averaged for each of the 84 acquisition points.</p>
 
-        <p>Signal reliability was actively monitored via the coherence function (Figure 2), ensuring values consistently approached unity. Expected local coherence drops were correctly identified near structural antiresonances, where the physical response amplitude approaches the noise floor of the instrumentation. The overall validity of the dataset was confirmed through the combined evaluation of FRF amplitude, phase, and Power Spectral Density (PSD) functions.</p>
+        <p>Signal reliability was actively monitored via the coherence function (<strong>Figure 2</strong>), ensuring values consistently approached unity. Expected local coherence drops were correctly identified near structural antiresonances, where the physical response amplitude approaches the noise floor of the instrumentation. The overall validity of the dataset was confirmed through the combined evaluation of FRF amplitude, phase, and Power Spectral Density (PSD) functions, which were continuously tracked through the measurement interface (<strong>Figure 3</strong>).</p>
 
         <figure style="text-align: center; margin: 30px 0;">
             <img src="images/coherence.png" alt="Coherence function" style="max-width: 100%; border-radius: 4px;">
@@ -130,7 +131,7 @@
         <h2>3. Modal Parameter Identification</h2>
         <p>The post-processing phase relied on a Multiple Degree of Freedom (MDOF) curve-fitting approach within Siemens Testlab to extract the modal parameters from the measured FRFs.</p>
 
-        <p>A stabilization diagram (Figure 4) was employed to systematically distinguish true physical structural modes from mathematical artifacts. By progressively increasing the model order, poles demonstrating stable frequency and damping characteristics across successive iterations were successfully isolated.</p>
+        <p>A stabilization diagram (<strong>Figure 4</strong>) was employed to systematically distinguish true physical structural modes from mathematical artifacts. By progressively increasing the model order, poles demonstrating stable frequency and damping characteristics across successive iterations were successfully isolated.</p>
 
         <figure style="text-align: center; margin: 30px 0;">
             <img src="images/stabilization.png" alt="Stabilization diagram" style="max-width: 100%; border-radius: 4px;">
@@ -139,36 +140,4 @@
             </figcaption>
         </figure>
 
-        <h2>4. Results & Validation</h2>
-        <p>The MDOF identification procedure successfully extracted 14 distinct structural modes. The robustness of the numerical model was validated by synthesizing the reconstructed FRFs directly from the extracted modal parameters. The synthesis demonstrated a high degree of correlation with the raw experimental measurements in both amplitude and phase across the entire analyzed frequency bandwidth.</p>
-
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Mode</th>
-                    <th>Natural Frequency [Hz]</th>
-                    <th>Damping Ratio [%]</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>1</td><td>12.2</td><td>4.56</td></tr>
-                <tr><td>2</td><td>161.6</td><td>0.13</td></tr>
-                <tr><td>3</td><td>343.0</td><td>0.10</td></tr>
-                <tr><td>4</td><td>403.1</td><td>0.05</td></tr>
-                <tr><td>5</td><td>414.0</td><td>0.04</td></tr>
-                <tr><td>6</td><td>639.7</td><td>0.11</td></tr>
-                <tr><td>7</td><td>650.6</td><td>0.10</td></tr>
-                <tr><td>8</td><td>745.1</td><td>0.04</td></tr>
-                <tr><td>9</td><td>1053.6</td><td>1.42</td></tr>
-                <tr><td>10</td><td>1108.0</td><td>0.35</td></tr>
-                <tr><td>11</td><td>1194.6</td><td>0.04</td></tr>
-                <tr><td>12</td><td>1382.9</td><td>0.64</td></tr>
-                <tr><td>13</td><td>1397.5</td><td>0.07</td></tr>
-                <tr><td>14</td><td>1526.0</td><td>0.30</td></tr>
-            </tbody>
-        </table>
-
-    </main>
-
-</body>
-</html>
+        <h2>4. Results
