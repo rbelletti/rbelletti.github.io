@@ -61,15 +61,29 @@
         </ul>
 
         <figure style="text-align: center; margin: 30px 0;">
-            <img src="images/acp_layup_sequence.png" alt="ANSYS ACP interface displaying the symmetric composite layup sequence and fiber orientations for the wing skin." style="max-width: 100%; border-radius: 4px;">
+            <img src="images/acp.png" alt="Composite polar properties on ANSYS ACP." style="max-width: 100%; border-radius: 4px;">
             <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
-                <em><b>Figure 2</b> - Composite layup definition in ANSYS ACP, highlighting the multi-layered carbon fiber sequence tailored for torsional stiffness.</em>
+                <em><b>Figure 2</b> - Polar properties from ANSYS ACP: (a) ply stiffness, (b) stack-up stiffness.</em>
             </figcaption>
         </figure>
 
         <h2>2. FSI and Static Analysis</h2>
         <p>A one-way Fluid-Structure Interaction (FSI) approach was employed. Aerodynamic pressure fields obtained from Fluent (at $10^{\circ}$ AoA) were mapped as boundary conditions on the mechanical solver. The resulting structural response was validated against Tsai-Wu and Tsai-Hill failure criteria to ensure integrity under limit load conditions.</p>
 
+        <figure style="text-align: center; margin: 30px 0;">
+            <img src="images/imported_pressure.png" alt="Contour plot of aerodynamic pressure distribution mapped onto the wing surface from a CFD simulation." style="max-width: 100%; border-radius: 4px;">
+            <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
+                <em><b>Figure 3</b> - 3D pressure field imported from ANSYS Fluent mapped directly onto the structural mesh.</em>
+            </figcaption>
+        </figure>
+
+        <figure style="text-align: center; margin: 30px 0;">
+            <img src="images/irf_plot.png" alt="Contour plot showing the Inverse Reserve Factor (IRF) on the composite wing, identifying critical stress areas." style="max-width: 100%; border-radius: 4px;">
+            <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
+                <em><b>Figure 4</b> - Composite failure evaluation using Tsai-Wu/Tsai-Hill criteria. The Inverse Reserve Factor (IRF) contour highlights critical load-bearing regions.</em>
+            </figcaption>
+        </figure>
+        
         <h2>3. Parametric Optimization</h2>
         <p>A direct optimization loop was implemented to refine the spar cross-sections, aiming to maximize structural efficiency while maintaining safety margins on composite stress concentrations.</p>
 
@@ -89,28 +103,48 @@
             </tbody>
         </table>
 
+        <figure style="text-align: center; margin: 30px 0;">
+            <img src="images/optimization_tradeoff.png" alt="ANSYS Direct Optimization interface showing the parametric tradeoff results for spar cross-section dimensions." style="max-width: 100%; border-radius: 4px;">
+            <figcaption style="font-size: 0.9em; color: #777; margin-top: 8px;">
+                <em><b>Figure 5</b> - Parametric optimization results identifying the optimal spar dimensions to minimize stress concentrations and weight.</em>
+            </figcaption>
+        </figure>
+        
         <h2>4. Dynamic Characterization</h2>
         
         <h3>4.1 Pre-Stressed Modal Analysis</h3>
         <p>To capture realistic flight dynamics, a pre-stressed modal analysis was performed, accounting for the stiffening effect exerted by the aerodynamic lift. The following table compares the natural frequencies before and after the application of the flight load.</p>
-
+        
         <table class="data-table">
             <thead>
                 <tr>
                     <th>Mode</th>
-                    <th>Unstressed Frequency [Hz]</th>
-                    <th>Pre-Stressed Frequency [Hz]</th>
+                    <th>Unstressed Pre-Optimization Frequency [Hz]</th>
+                    <th>Unstressed Post-Optimization Frequency [Hz]</th>
+                    <th>Pre-Stressed Post-Optimization Frequency [Hz]</th>
                 </tr>
             </thead>
             <tbody>
-                <tr><td>1 (1st Bending)</td><td>11.76</td><td>11.66</td></tr>
-                <tr><td>2 (1st Torsion)</td><td>43.09</td><td>42.62</td></tr>
-                <tr><td>3 (2nd Bending)</td><td>55.35</td><td>55.86</td></tr>
+                <tr><td>1</td><td>11.76</td><td>11.70</td><td>11.66</td></tr>
+                <tr><td>2</td><td>43.09</td><td>42.63</td><td>42.62</td></tr>
+                <tr><td>3</td><td>55.35</td><td>55.85</td><td>55.86</td></tr>
+                <tr><td>4</td><td>58.60</td><td>58.41</td><td>58.36</td></tr>
+                <tr><td>5</td><td>77.24</td><td>76.70</td><td>69.45</td></tr>
+                <tr><td>6</td><td>85.56</td><td>86.52</td><td>76.68</td></tr>
+                <tr><td>7</td><td>86.48</td><td>87.78</td><td>78.93</td></tr>
+                <tr><td>8</td><td>87.50</td><td>88.35</td><td>84.19</td></tr>
+                <tr><td>9</td><td>88.31</td><td>89.67</td><td>99.95</td></tr>
+                <tr><td>10</td><td>88.73</td><td>90.44</td><td>102.66</td></tr>
+                <tr><td>11</td><td>91.24</td><td>100.13</td><td>103.56</td></tr>
+                <tr><td>12</td><td>95.24</td><td>100.77</td><td>104.43</td></tr>
+                <tr><td>13</td><td>100.69</td><td>104.19</td><td>109.65</td></tr>
+                <tr><td>14</td><td>101.41</td><td>106.06</td><td>111.28</td></tr>
+                <tr><td>15</td><td>103.37</td><td>111.61</td><td>113.27</td></tr>
             </tbody>
         </table>
 
         <h3>4.2 Harmonic Response Analysis</h3>
-        <p>A full-method Harmonic Response analysis 10÷60 Hz was conducted to characterize the wing's dynamic behavior, assessing resonant peaks and verifying susceptibility to aeroelastic instability.</p>
+        <p>A full-method Harmonic Response analysis 10÷60 Hz was conducted to characterize the wing's dynamic behavior, assessing resonant peaks.</p>
 
     </main>
 </body>
